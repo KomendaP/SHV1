@@ -1,0 +1,31 @@
+ul.ul-tm-3 {
+	float: right;
+	@media (max-width: @screen-sm){
+		float: none;
+	}
+	li {
+		a {
+			&.cart {
+				position: relative;
+				color: #fff;
+				padding: 7px 10px 7px 55px;
+				margin: 7px 0;
+				height: 34px;
+				width: 190px;
+
+				&:hover {
+					background: inherit;
+					color: #000;
+				}
+				span {
+					position: absolute;
+					left: 25px;
+
+					&:before {
+						font-size: 20px;
+					}
+				}
+			}
+		}
+	}
+}

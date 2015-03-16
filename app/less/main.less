@@ -1,0 +1,22 @@
+// Main
+@import "variables";
+@import "mixins";
+@import "fonts";
+
+// bootstrap
+@import "@{bootstrap}bootstrap";
+@import "@{bootstrap}theme";
+// flags
+@import "@{flags}less/flag-icon";
+
+// App styles
+@import "header/header";
+
+
+body {
+	background: #555;
+	color: #fff;
+}
+section#content {
+  .container();
+}

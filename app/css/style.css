@@ -1,0 +1,21 @@
+ul.ul-tm-2 li.dropdown a.dropdown-toggle span.caret {
+  margin-left: 15px;
+  color: #d1d1d1;
+  border-top: 10px solid;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+ul.ul-tm-2 li.dropdown a.dropdown-toggle span.select-value {
+  margin: 0 0 0 10px;
+}
+ul.ul-tm-2 li.dropdown a.dropdown-toggle span.flag {
+  position: relative;
+  top: -2px;
+}
+ul.ul-tm-2 li.dropdown ul.dropdown-menu li a {
+  position: relative;
+  overflow: hidden;
+}
+ul.ul-tm-2 li.dropdown ul.dropdown-menu li a span.flag {
+  margin: 0 20px 0 0;
+}

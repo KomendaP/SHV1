@@ -1,0 +1,24 @@
+{
+  "name": "SHOP",
+  "version": "0.0.0",
+  "authors": [
+    "Pavlo Komenda <Pavlo_Komenda@epam.com>"
+  ],
+  "description": "Shop site",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2"
+    "flag-icon-css": "*"
+  },
+  "devDependencies": {
+    "bootstrap": "~3.3.2"
+  }
+}
