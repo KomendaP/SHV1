@@ -2,10 +2,10 @@
   "name": "SHOP",
   "version": "0.0.0",
   "authors": [
-    "Pavlo Komenda <Pavlo_Komenda@epam.com>"
+    "Pavlo Komenda"
   ],
   "description": "Shop site",
-  "main": "index.html",
+  "main": "app/index.html",
   "license": "MIT",
   "ignore": [
     "**/.*",
