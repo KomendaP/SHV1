@@ -1,13 +1,21 @@
 {
   "name": "SHOP",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.html",
+  "description": "Shop site murkup",
+  "main": "app/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Whinterstoprm/SHV1.git"
+  },
   "author": "Pavlo Komenda",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Whinterstoprm/SHV1/issues"
+  },
+  "homepage": "https://github.com/Whinterstoprm/SHV1",
   "devDependencies": {
     "delete": "^0.1.5",
     "gulp": "^3.8.10",
