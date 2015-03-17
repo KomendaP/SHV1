@@ -1,0 +1,42 @@
+section.header
+	section.container-fluid
+		.row
+			.container
+				.row
+					nav.navbar.navbar-default
+						.navbar-header
+							button.btn.navbar-toggle.collapsed(
+								data-toggle="collapse"
+								data-target="#main-menu"
+							)
+								span.icon-bar
+								span.icon-bar
+								span.icon-bar
+						.navbar-collapse.collapse#main-menu
+							include advertisment
+							ul.nav.navbar-nav.ul-tm-2
+								li.dropdown
+									include lang
+								li.dropdown
+									include cur
+							include shopping
+
+	section.part-2.row
+		.col-xs-12
+			.slider
+				img(src="pic/bg1.jpg" title="girl" alt="girlpicture")
+
+		.container.store-menu
+			nav.navbar.navbar-default
+				.navbar-header
+					a(href="#").navbar-brand.presenter
+						span S
+					a(href="#").navbar-brand Styletour
+				ul.nav.navbar-nav
+					li: a(href="#") Support
+					li: a(href="#") Free Shipping Over $50
+					li: a(href="#") Articles
+					form.navbar-form.navbar-right(role="search")
+						.form-group
+							input.form-control(type="text" placeholder="search")
+						button.glyphicon.glyphicon-search.btn(type="submit" aria-hidden="true")

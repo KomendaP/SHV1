@@ -1,0 +1,92 @@
+section.header {
+
+}
+section.container-fluid {
+	font-family: "Myriad Pro", sans-serif;
+	background: #fff;
+
+	//flags main styles
+	span.flag {
+		@height: 16px;
+		@width: 21px;
+		@border: 1px;
+
+		display: inline-block;
+		vertical-align: middle;
+		height: @height;
+		width: @height * 1.3125;
+		border: @border solid #cccccc;
+	}
+
+	// main menu
+	nav.navbar.navbar-default {
+		background: none;
+		box-shadow: none;
+		border: none;
+		margin-bottom: auto;
+		.navbar-header {
+			button.btn.navbar-toggle.collapsed {
+				span.icon-bar {}
+			}
+		}
+	}
+
+	#main-menu {
+		border: none;
+		background: none;
+		span[class^="icon"] {
+			&:before {
+				font-size: 1.5em;
+			}
+		}
+
+		ul.nav.navbar-nav {
+			li > a {
+				text-transform: uppercase;
+			}
+			&.ul-tm-1 {
+				@media (min-width: 1000px) {
+					padding-right: 30px;
+				}
+				li {
+					a {}
+				}
+			}
+		}
+		@import "selectors";
+	}
+	@import "shopping-curt";
+}
+
+section.part-2 {
+	.slider {
+		img {
+			max-width: 100%;
+		}
+	}
+	.store-menu {
+		position: relative;
+		nav.navbar {
+			position: absolute;
+			top: 50px;
+			width: 100%;
+			background: #000;
+			border-color: #000;
+			height: 83px;
+			.navbar-brand {
+				height: 83px;
+				line-height: 53px;
+			}
+			.navbar-form {
+				margin: 20px -15px;
+				position: relative;
+				button {
+
+					position: absolute;
+					right: 50px;
+					top: 0;
+				}
+			}
+		}
+	}
+}
