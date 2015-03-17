@@ -1,10 +1,11 @@
 {
   "name": "SHOP",
   "version": "0.0.0",
+  "homepage": "https://github.com/Whinterstoprm/SHV1",
   "authors": [
-    "Pavlo Komenda"
+    "Pavlo Komenda <Pavlo_Komenda@epam.com>"
   ],
-  "description": "Shop site",
+  "description": "Shop site markup",
   "main": "app/index.html",
   "license": "MIT",
   "ignore": [
@@ -14,11 +15,8 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-    "bootstrap": "~3.3.2"
-    "flag-icon-css": "*"
-  },
   "devDependencies": {
-    "bootstrap": "~3.3.2"
+    "jquery": "~2.1.3",
+    "bootstrap": "~3.3.4"
   }
 }
