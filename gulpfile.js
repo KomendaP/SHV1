@@ -2,9 +2,14 @@ var gulp = require('gulp'),
 	connect = require('gulp-connect'),
 	concat = require('gulp-concat'),
 	uglify = require('gulp-uglify'),
+
+	fs = require('fs-extra'),
 	del = require('delete'),
-	devDir = './app/',
-	bow = './bower_components/';
+
+	devDir = './',
+	bow = './bower_components/',
+	bootstrap = bow + 'bootstrap/fonts',
+	flags = bow + 'flag-icon-css/flags';
 
 // Server
 gulp.task('connect', function() {
@@ -12,6 +17,17 @@ gulp.task('connect', function() {
 		root: [devDir],
 		livereload: true
 	});
+});
+
+gulp.task('copy', function() {
+	fs.copy(bootstrap, './fonts', function(err) {
+		if (err) return console.error(err)
+		console.log("success!")
+	})
+	fs.copy(flags, './flags', function(err) {
+		if (err) return console.error(err)
+		console.log("success!")
+	})
 });
 
 gulp.task('js', function() {
@@ -34,6 +50,7 @@ gulp.task('dell', function () {
 	//	if (err) {throw err;}
 	//});
 	del.sync(devDir + 'js/all.js');
+	del.sync(devDir + 'fonts/');
 });
 
 gulp.task('watch', function () {
@@ -46,5 +63,5 @@ gulp.task('watch', function () {
 		['html']);
 });
 
-gulp.task('default', ['dell', 'js', 'connect', 'watch']);
+gulp.task('default', ['dell', 'copy', 'js', 'connect', 'watch']);
 gulp.task('del', ['dell']);
