@@ -21,10 +21,14 @@
     "gulp": "^3.8.10",
     "gulp-concat": "^2.4.3",
     "gulp-connect": "^2.2.0",
-    "gulp-jade": "^0.11.0",
-    "gulp-uglify": "^1.1.0"
+    "gulp-jade": "^1.0.0",
+    "gulp-less": "^3.0.2",
+    "path": "^0.11.14"
   },
   "dependencies": {
-    "fs-extra": "^0.16.5"
+    "fs-extra": "^0.16.5",
+    "gulp-contrib-copy": "0.0.2",
+    "gulp-copy": "0.0.2",
+    "gulp-watch": "^4.2.1"
   }
 }
