@@ -1,34 +1,44 @@
 {
   "name": "SHOP",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Shop site murkup",
-  "main": "app/index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "author": {
+    "name": "Pavlo Komenda",
+    "email": "komenda.pavlo.dev@gmail.com"
   },
+  "contributors": {
+    "name": "Pavlo Komenda",
+    "email": "komenda.pavlo.dev@gmail.com"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "^9.0.4",
+    "debowerify": "^1.2.0",
+    "gulp": "^3.8.10",
+    "gulp-concat": "^2.4.3",
+    "gulp-connect": "^2.2.0",
+    "gulp-copy-ext": "^1.0.3",
+    "gulp-if": "^1.2.5",
+    "gulp-jade": "^1.0.0",
+    "gulp-less": "^3.0.2",
+    "gulp-streamify": "0.0.5",
+    "gulp-uglify": "^1.1.0",
+    "gulp-util": "^3.0.4",
+    "gulp-watch": "^4.2.1",
+    "path": "^0.11.14",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "license": "ISC",
+  "main": "app/index.html",
+  "homepage": "https://github.com/Whinterstoprm/SHV1",
   "repository": {
     "type": "git",
     "url": "https://github.com/Whinterstoprm/SHV1.git"
   },
-  "author": "Pavlo Komenda",
-  "license": "ISC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "bugs": {
     "url": "https://github.com/Whinterstoprm/SHV1/issues"
-  },
-  "homepage": "https://github.com/Whinterstoprm/SHV1",
-  "devDependencies": {
-    "delete": "^0.1.5",
-    "gulp": "^3.8.10",
-    "gulp-concat": "^2.4.3",
-    "gulp-connect": "^2.2.0",
-    "gulp-jade": "^1.0.0",
-    "gulp-less": "^3.0.2",
-    "path": "^0.11.14"
-  },
-  "dependencies": {
-    "fs-extra": "^0.16.5",
-    "gulp-contrib-copy": "0.0.2",
-    "gulp-copy": "0.0.2",
-    "gulp-watch": "^4.2.1"
   }
 }

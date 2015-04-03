@@ -1,26 +1,28 @@
-var	root 	= './',
-	source 	= root 	+ 'src/',
-	dist 	= root 	+ 'dist/',
-	bower 	= root 	+ 'bower_components/',
-	btstrp 	= bower + 'bootstrap/',
-	flags 	= bower + 'flag-icon-css/';
+var gulp 		= require('gulp'),
+	util 		= require('gulp-util'),
+	connect 	= require('gulp-connect'),
+	watch 		= require('gulp-watch'),
+	gulpif 		= require('gulp-if'),
+	jade 		= require('gulp-jade'),
+	less 		= require('gulp-less'),
+	concat 		= require('gulp-concat'),
+	uglify 		= require('gulp-uglify'),
+	streamify 	= require('gulp-streamify'),
+	path 		= require('path'),
+	source 		= require('vinyl-source-stream'),
+	browserify 	= require('browserify'),
+	copy 		= require('gulp-copy-ext'),
+	BowerFiles 	= require('gulp-bower');
 
-var filesToMove = [
-		btstrp + 'fonts/**/*.*',
-		flags + '/**/*.*',
-		source + 'images/**/*.*'
-	];
+var src = './src/*/';
+var dest = './build';
 
-var gulp 	= require('gulp'),
-	connect = require('gulp-connect'),
-	concat 	= require('gulp-concat'),
-	jade 	= require('gulp-jade'),
-	less 	= require('gulp-less'),
-	watch 	= require('gulp-watch'),
-	copy 	= require( 'gulp-contrib-copy' ),
-	//fs 		= require('fs-extra'),
-	del 	= require('delete'),
-	path 	= require('path');
+//var	root 	= './',
+//	source 	= root 	+ 'src/',
+//	dist 	= root 	+ 'dist/',
+//	bower 	= root 	+ 'bower_components/',
+//	btstrp 	= bower + 'bootstrap/',
+//	flags 	= bower + 'flag-icon-css/';
 
 
 // JADE compile
@@ -33,48 +35,25 @@ gulp.task('jade', function() {
 });
 
 // LESS compile
-//gulp.task('less', function () {
-//	return gulp.src(source + 'less/*.less')
-//		.pipe(less({
-//			paths: [ path.join(__dirname, 'less', 'includes') ]
-//		}))
-//		.pipe(gulp.dest(dist + 'css'));
-//});
-gulp.task('stream', function () {
-	gulp.src(source + 'less/*.less')
-		.pipe(watch(source + 'less/**/*.less'))
-		.pipe(less({
-			paths: [ path.join(__dirname, 'less', 'includes') ]
-		}))
-		.pipe(gulp.dest(dist + 'css'));
-});
-
-gulp.task('watch:less', function () {
-	watch(source + 'less/**/*.less', function () {
-		gulp.src(source + 'less/*.less')
-			.pipe(less())
-			.pipe(gulp.dest(dist + 'css'));
-	});
-});
 
 // JS concat and minify
-gulp.task('js', function() {
-	gulp.src([
-			bower + 'jquery/dist/jquery.js',
-			btstrp +'/dist/js/bootstrap.js',
-		])
-		.pipe(concat('all.js'))
-		.pipe(gulp.dest(dist + 'js'));
+gulp.task('js', function () {
+	return browserify('./js/main', { debug: typ === 'development'})
+		.bundle()
+		.pipe(source('super.js'))
+		.pipe(gulpif(typ === 'production', streamify(uglify())))
+		.pipe(gulp.dest('./js'));
 });
 
-// Font copy
-gulp.task('move', function(){
-	gulp.src(btstrp + 'fonts/**/*.*', { base: btstrp})
-		.pipe(gulp.dest(dist));
-	gulp.src(flags + 'flags/**/*.*', { base: flags })
-		.pipe(gulp.dest(dist));
-	gulp.src(source + 'images/**/*.*', { base: source })
-		.pipe(gulp.dest(dist));
+// Bower
+gulp.task("bower-files", function(){
+	return BowerFiles('src/libs/');
+});
+
+gulp.task('mcss', function() {
+	gulp.src(['*.eot', '*.svg', '*.ttf', '*.woff', '*.woff2'])
+		.pipe(copy())
+		.pipe(gulp.dest(dest + '/'));
 });
 
 // Server
