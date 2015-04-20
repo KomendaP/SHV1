@@ -2,20 +2,33 @@ var gulp 		= require('gulp'),
 	util 		= require('gulp-util'),
 	connect 	= require('gulp-connect'),
 	watch 		= require('gulp-watch'),
+	gulpif 		= require('gulp-if'),
 	jade 		= require('gulp-jade'),
 	less 		= require('gulp-less'),
+	concat 		= require('gulp-concat'),
 	uglify 		= require('gulp-uglify'),
-    concat      = require("gulp-concat"),
 	streamify 	= require('gulp-streamify'),
+	path 		= require('path'),
 	source 		= require('vinyl-source-stream'),
+<<<<<<< Updated upstream
+	browserify 	= require('browserify'),
+	copy 		= require('gulp-copy-ext'),
+	BowerFiles 	= require('gulp-bower');
+=======
 	bshim 		= require('browserify-shim'),
 	browserify 	= require('browserify');
 var rename = require("gulp-rename");
+>>>>>>> Stashed changes
 
-var	root 	= './',
-	src 	= root 	+ 'src/',
-	dst 	= root 	+ 'dst/',
-    bower   = root 	+ 'bower_components/';
+var src = './src/*/';
+var dest = './build';
+
+//var	root 	= './',
+//	source 	= root 	+ 'src/',
+//	dist 	= root 	+ 'dist/',
+//	bower 	= root 	+ 'bower_components/',
+//	btstrp 	= bower + 'bootstrap/',
+//	flags 	= bower + 'flag-icon-css/';
 
 var wiredep = require('wiredep').stream;
 
@@ -30,21 +43,30 @@ gulp.task('bower', function () {
 
 // JADE compile
 gulp.task('jade', function() {
-	gulp.src(src + 'templates/index.jade')
+	gulp.src(source + 'templates/index.jade')
 		.pipe(jade({
 			pretty: true
 		}))
-		.pipe(gulp.dest(dst));
+		.pipe(gulp.dest(dist));
 });
 
 // LESS compile
-gulp.task('less', function () {
-    gulp.src(src + 'less/style.less') // path to your file
-        .pipe(less())
-        .pipe(gulp.dest(dst + 'css/'));
-});
 
 // JS concat and minify
+<<<<<<< Updated upstream
+gulp.task('js', function () {
+	return browserify('./js/main', { debug: typ === 'development'})
+		.bundle()
+		.pipe(source('super.js'))
+		.pipe(gulpif(typ === 'production', streamify(uglify())))
+		.pipe(gulp.dest('./js'));
+});
+
+// Bower
+gulp.task("bower-files", function(){
+	return BowerFiles('src/libs/');
+});
+=======
 gulp.task('js',['copy'], function () {
 	return browserify(src + 'js/main.js',{ debug: true})
 		.bundle()
@@ -76,27 +98,25 @@ gulp.task("copy", function(){
         .pipe(gulp.dest(src + 'js'));
     gulp.src(bower + 'bootstrap/dist/js/bootstrap.js')
         .pipe(gulp.dest(src + 'js'));
+>>>>>>> Stashed changes
 
-    // img
-    gulp.src([
-            src + 'img/*.png',
-            src + 'img/*.jpg',
-            src + 'img/*.gif'
-    ])
-        .pipe(gulp.dest(dst + 'img'));
+gulp.task('mcss', function() {
+	gulp.src(['*.eot', '*.svg', '*.ttf', '*.woff', '*.woff2'])
+		.pipe(copy())
+		.pipe(gulp.dest(dest + '/'));
 });
 
 // Server
 gulp.task('connect', function() {
 	connect.server({
-		root: dst,
+		root: dist,
 		livereload: true
 	});
 });
 
 // Page reload
 gulp.task('html', function () {
-	gulp.src( dst + '*.html')
+	gulp.src( dist + '*.html')
 		.pipe(connect.reload());
 });
 
@@ -104,20 +124,13 @@ gulp.task('html', function () {
 gulp.task('watch', function () {
 	gulp.watch(
 		[
-			dst + '*.html',
-			dst + 'css/*.css',
-			dst + 'js/*.js'
+			dist + '*.html',
+			dist + 'css/*.css',
+			dist + 'js/*.js'
 		],
 		['html']);
 });
 
-gulp.task('default',
-    [
-        'copy',
-        'jade',
-        'js',
-        'less',
-        'connect',
-        'watch'
-    ]
-);
+gulp.task('default', ['jade', 'less', 'js', 'copy', 'connect', 'watch']);
+gulp.task('less', ['stream', 'watch:less']);
+gulp.task('del', ['dell']);
