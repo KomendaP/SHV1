@@ -1,2 +1,2 @@
-var $ = require('./jquery'),
-    bts = require('./bootstrap');
+var jquery = require('jquery');
+//var bootstrap = require('bootstrap');
