@@ -9,15 +9,26 @@ var prod    = builds + "/production";
 
 var src     = './src',
     dest    = dev,
+    files   = dest + '/files',
     nm      = './node_modules',
     bw      = './bower_components';
 
 module.exports = {
     images: {
-        t:tasks.img
+        t:tasks.img,
+        src: src + '/files/images/**',
+        dest: files + '/images'
     },
     clear: {
-        t:tasks.clear
+        t:tasks.clear,
+        light: [
+            builds
+        ],
+        full: [
+            builds,
+            'bower_components',
+            'node_modules'
+        ]
     },
     production: {
         t:tasks.prod
@@ -35,11 +46,14 @@ module.exports = {
     },
     watch: {
         t: tasks.watch,
-        src: [
+        server: [
             dest + '*.html',
             dest + 'css/*.css',
             dest + 'js/*.js'
         ],
+        jade: src + "/templates/**/*.jade",
+        less: src + "/less/**/*.less",
+        js: src + "/js/**/*.js",
         do: [
             tasks.reload
         ]
