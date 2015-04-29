@@ -5,28 +5,15 @@ var gulp 		= require('gulp'),
 	jade 		= require('gulp-jade'),
 	less 		= require('gulp-less'),
 	uglify 		= require('gulp-uglify'),
-    concat      = require("gulp-concat"),
 	streamify 	= require('gulp-streamify'),
 	source 		= require('vinyl-source-stream'),
 	bshim 		= require('browserify-shim'),
 	browserify 	= require('browserify');
-var rename = require("gulp-rename");
 
 var	root 	= './',
 	src 	= root 	+ 'src/',
 	dst 	= root 	+ 'dst/',
     bower   = root 	+ 'bower_components/';
-
-var wiredep = require('wiredep').stream;
-
-gulp.task('bower', function () {
-    gulp.src(dst + 'index.html')
-        .pipe(wiredep({
-            optional: 'configuration',
-            goes: 'here'
-        }))
-        .pipe(gulp.dest('./dst'));
-});
 
 // JADE compile
 gulp.task('jade', function() {
