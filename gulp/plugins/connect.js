@@ -9,8 +9,3 @@ var gulp    = require('gulp'),
 gulp.task(conf.t, function() {
     connect.server(conf.options);
 });
-
-gulp.task(conf.reload.t, function () {
-    gulp.src(conf.reload.src)
-        .pipe(connect.reload());
-});

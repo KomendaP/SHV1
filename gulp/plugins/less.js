@@ -12,6 +12,7 @@ var gulp        = require('gulp'),
     path        = require('path'),
     cleanCss    = require('less-plugin-clean-css'),
     autoprefix  = require('less-plugin-autoprefix'),
+    connect     = require('gulp-connect'),
     conf        = require('./../config').less;
 
 // conf
@@ -31,5 +32,6 @@ gulp.task(conf.t, function () {
         .pipe(sourcemaps.init())
         .pipe(less(settings))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest(conf.dest));
+        .pipe(gulp.dest(conf.dest))
+        .pipe(connect.reload());
 });

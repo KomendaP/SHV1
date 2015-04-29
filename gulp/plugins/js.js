@@ -6,6 +6,7 @@ var gulp        = require('gulp'),
     streamify 	= require('gulp-streamify'),
     source 		= require('vinyl-source-stream'),
     browserify 	= require('browserify'),
+    connect     = require('gulp-connect'),
     conf        = require('./../config').js;
 
 gulp.task(conf.t, function () {
@@ -14,5 +15,6 @@ gulp.task(conf.t, function () {
         .on('error', console.error.bind(console))
         .pipe(source(conf.name))
         //.pipe(streamify(uglify()))
-        .pipe(gulp.dest(conf.dest));
+        .pipe(gulp.dest(conf.dest))
+        .pipe(connect.reload());
 });

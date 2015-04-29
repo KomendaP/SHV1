@@ -7,4 +7,5 @@ var requireDir = require('require-dir'),
 
 requireDir('./gulp/plugins', {recurse: true});
 
-gulp.task('default', [t.jade, t.js, t.less, t.connect, t.watch ]);
+gulp.task('prepeare', [t.img, t.copy ]);
+gulp.task('default', [t.jade, t.js, t.img, t.less, t.connect, t.watch ]);
