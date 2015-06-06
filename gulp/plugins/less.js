@@ -19,18 +19,18 @@ var gulp        = require('gulp'),
 var settings = {
     paths: [
         path.join(__dirname, 'less', 'includes')
-    ],
+    ]/*,
     plugins: [
         new cleanCss(conf.pluginsSettings.autoprefix),
         new autoprefix(conf.pluginsSettings.cleanCss)
-    ]
+    ]*/
 };
 
 // task
 gulp.task(conf.t, function () {
     gulp.src(conf.src)
         .pipe(sourcemaps.init())
-        .pipe(less(settings))
+        .pipe(less(/*settings*/))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(conf.dest))
         .pipe(connect.reload());
