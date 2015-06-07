@@ -4,8 +4,9 @@
  */
 var gulp    = require('gulp'),
     connect = require('gulp-connect'),
+    task    = require('./../config');
     conf    = require('./../config').connect;
 
-gulp.task(conf.t, function() {
+gulp.task(conf.t, [task.jade.t, task.js.t, task.less.t], function() {
     connect.server(conf.options);
 });

@@ -3,12 +3,11 @@
  * Watcher
  */
 var gulp    = require('gulp'),
-    //watch   = require('gulp-watch'),
-    task    = require('./../config'),
-    conf    = require('./../config').watch;
+    conf    = require('./../config'),
+    watch    = require('./../config').watch;
 
-gulp.task(conf.t, function () {
-    gulp.watch(conf.jade, [task.jade.t]);
-    gulp.watch(conf.less, [task.less.t]);
-    gulp.watch(conf.js, [task.js.t]);
+gulp.task(watch.t, [conf.connect.t], function () {
+    gulp.watch(watch.jade, [conf.jade.t]);
+    gulp.watch(watch.less, [conf.less.t]);
+    gulp.watch(watch.js, [conf.js.t]);
 });

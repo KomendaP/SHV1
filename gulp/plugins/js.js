@@ -16,5 +16,6 @@ gulp.task(conf.js.t, function () {
         .pipe(source(conf.js.name))
         .pipe(_if(conf.isProd, streamify(uglify())))
         .pipe(gulp.dest(conf.js.dest))
+        .pipe(connect.reload())
         .on('error', conf.gutil.log);
 });

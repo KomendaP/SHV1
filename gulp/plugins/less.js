@@ -12,16 +12,21 @@ var gulp        = require('gulp'),
     path        = require('path'),
     minifyCss   = require('gulp-minify-css'),
     connect     = require('gulp-connect'),
+    autopref    = require('gulp-autoprefixer'),
+    plumber    = require('gulp-plumber-notifier'),
     _if         = require('gulp-if'),
     conf        = require('./../config');
 
 // task
 gulp.task(conf.less.t, function () {
     gulp.src(conf.less.src)
+        //.pipe(plumber())
         .pipe(_if(!conf.isProd, sourcemaps.init()))
         .pipe(less({paths: [path.join(__dirname, 'less', 'includes')]}))
         .pipe(_if(conf.isProd, minifyCss(conf.less.minifyCss)))
+        .pipe(autopref(conf.less.prefix))
         .pipe(_if(!conf.isProd, sourcemaps.write()))
         .pipe(gulp.dest(conf.less.dest))
+        .pipe(connect.reload())
         .on('error', conf.gutil.log);
 });

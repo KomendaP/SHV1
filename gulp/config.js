@@ -9,7 +9,7 @@ var d     = builds + "/DEVELOPMENT";
 var p    = builds + "/production";
 
 var src     = './src',
-    dest    = p,
+    dest    = d,
     files   = dest + '/files',
     nm      = './node_modules',
     bw      = './bower_components';
@@ -95,6 +95,10 @@ module.exports = {
         dest: dest + '/css',
         minifyCss: {
             compatibility: 'ie8'
+        },
+        prefix: {
+            browsers: ['last 2 versions'],
+            cascade: true
         }
     },
     js: {
