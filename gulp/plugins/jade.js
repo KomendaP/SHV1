@@ -5,11 +5,12 @@
 var gulp    = require('gulp'),
     jade    = require('gulp-jade'),
     connect = require('gulp-connect'),
+    _if     = require('gulp-if'),
     conf    = require('./../config');
 
 gulp.task(conf.jade.t, function() {
     gulp.src(conf.jade.src)
-        .pipe(jade(conf.jade.settings))
+        .pipe(jade(_if(!conf.isProd, conf.jade.settings)))
         .pipe(gulp.dest(conf.jade.dest))
         .pipe(connect.reload())
         .on('error', conf.gutil.log);

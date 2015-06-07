@@ -5,16 +5,17 @@
 var tasks   = require('./task-list');
 var gutil   = require('gulp-util');
 var builds  = "./BUILDS";
-var dev     = builds + "/DEVELOPMENT";
-var prod    = builds + "/production";
+var d     = builds + "/DEVELOPMENT";
+var p    = builds + "/production";
 
 var src     = './src',
-    dest    = dev,
+    dest    = p,
     files   = dest + '/files',
     nm      = './node_modules',
     bw      = './bower_components';
 
 module.exports = {
+    isProd: /prod+/i.test(dest),
     gutil: gutil,
     images: {
         t:tasks.img,
