@@ -2,9 +2,10 @@
  * Created by Pavlo_Komenda on 4/22/2015.
  * Build configuration for GULP
  */
-var tasks  = require('./task-list');
-var builds  = "./builds";
-var dev     = builds + "/development";
+var tasks   = require('./task-list');
+var gutil   = require('gulp-util');
+var builds  = "./BUILDS";
+var dev     = builds + "/DEVELOPMENT";
 var prod    = builds + "/production";
 
 var src     = './src',
@@ -14,6 +15,7 @@ var src     = './src',
     bw      = './bower_components';
 
 module.exports = {
+    gutil: gutil,
     images: {
         t:tasks.img,
         src: src + '/files/images/**',
@@ -80,7 +82,7 @@ module.exports = {
     },
     jade: {
         t:tasks.jade,
-        src: src + "/templates/index.jade",
+        src: src + "/templates/**/!(_)*.jade",
         dest: dest,
         settings: {
             pretty: true
@@ -88,17 +90,10 @@ module.exports = {
     },
     less: {
         t: tasks.less,
-        src: src + '/less/style.less',
+        src: src + '/less/**/!(_)*.less',
         dest: dest + '/css',
-        pluginsSettings: {
-            cleanCss:{
-                advanced: true
-            },
-            autoprefix:{
-                browsers: [
-                    "last 2 versions"
-                ]
-            }
+        minifyCss: {
+            compatibility: 'ie8'
         }
     },
     js: {

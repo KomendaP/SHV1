@@ -10,28 +10,17 @@ var gulp        = require('gulp'),
     less        = require('gulp-less'),
     sourcemaps  = require('gulp-sourcemaps'),
     path        = require('path'),
-    cleanCss    = require('less-plugin-clean-css'),
-    autoprefix  = require('less-plugin-autoprefix'),
+    minifyCss   = require('gulp-minify-css'),
     connect     = require('gulp-connect'),
-    conf        = require('./../config').less;
-
-// conf
-var settings = {
-    paths: [
-        path.join(__dirname, 'less', 'includes')
-    ]/*,
-    plugins: [
-        new cleanCss(conf.pluginsSettings.autoprefix),
-        new autoprefix(conf.pluginsSettings.cleanCss)
-    ]*/
-};
+    conf        = require('./../config');
 
 // task
-gulp.task(conf.t, function () {
-    gulp.src(conf.src)
+gulp.task(conf.less.t, function () {
+    gulp.src(conf.less.src)
         .pipe(sourcemaps.init())
-        .pipe(less(/*settings*/))
+        .pipe(less({paths: [path.join(__dirname, 'less', 'includes')]}))
+        .pipe(minifyCss(conf.less.minifyCss))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest(conf.dest))
-        .pipe(connect.reload());
+        .pipe(gulp.dest(conf.less.dest))
+        .on('error', conf.gutil.log);
 });

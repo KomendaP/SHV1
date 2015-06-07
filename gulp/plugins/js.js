@@ -7,14 +7,14 @@ var gulp        = require('gulp'),
     source 		= require('vinyl-source-stream'),
     browserify 	= require('browserify'),
     connect     = require('gulp-connect'),
-    conf        = require('./../config').js;
+    conf        = require('./../config');
 
-gulp.task(conf.t, function () {
-    return browserify(conf.src, conf.browserify.opt)
+gulp.task(conf.js.t, function () {
+    return browserify(conf.js.src, conf.js.browserify.opt)
         .bundle()
-        .on('error', console.error.bind(console))
-        .pipe(source(conf.name))
+        .pipe(source(conf.js.name))
         //.pipe(streamify(uglify()))
-        .pipe(gulp.dest(conf.dest))
-        .pipe(connect.reload());
+        .pipe(gulp.dest(conf.js.dest))
+        .pipe(connect.reload())
+        .on('error', conf.gutil.log);
 });
