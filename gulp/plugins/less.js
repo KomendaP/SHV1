@@ -13,7 +13,7 @@ var gulp        = require('gulp'),
     minifyCss   = require('gulp-minify-css'),
     connect     = require('gulp-connect'),
     autopref    = require('gulp-autoprefixer'),
-    plumber    = require('gulp-plumber-notifier'),
+    plumber     = require('gulp-plumber-notifier'),
     _if         = require('gulp-if'),
     conf        = require('./../config');
 

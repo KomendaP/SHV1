@@ -1,0 +1,56 @@
+section.part-1 {
+	font-family: "Myriad Pro", sans-serif;
+	background: #000;
+
+	//flags main styles
+	span.flag {
+		@height: 16px;
+		@width: 21px;
+		@border: 1px;
+
+		display: inline-block;
+		vertical-align: middle;
+		height: @height;
+		width: @height * 1.3125;
+		border: @border solid #cccccc;
+	}
+
+	// main menu
+	nav.navbar.navbar-default {
+		background: none;
+		box-shadow: none;
+		border: none;
+		margin-bottom: auto;
+		.navbar-header {
+			button.btn.navbar-toggle.collapsed {
+				span.icon-bar {}
+			}
+		}
+	}
+	.main-menu-wrapper {
+		width: 1300px;
+
+		.main-menu {
+			border: none;
+			background: none;
+
+			span[class^="icon"] {
+				&:before {
+					font-size: 1.5em;
+				}
+			}
+
+			ul.nav.navbar-nav {
+				@margin: 18px;
+				li > a {
+					text-transform: uppercase;
+					margin-top: @margin;
+					margin-bottom: @margin;
+				}
+				@import "_submenu";
+				@import "_selectors";
+				@import "_shopping";
+			}
+		}
+	}
+}

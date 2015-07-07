@@ -1,0 +1,17 @@
+section.part-1.container-fluid
+   .row
+      .container.main-menu-wrapper
+         .row
+            nav.navbar.navbar-default
+               .navbar-header.mobile-menu-btn
+                  button.btn.navbar-toggle.collapsed(
+                  data-toggle="collapse"
+                  data-target="#mobile-menu"
+                  )
+                     span.icon-bar
+                     span.icon-bar
+                     span.icon-bar
+               .navbar-collapse.collapse.main-menu#mobile-menu
+                  include _submenu
+                  include _selectors
+                  include _shopping

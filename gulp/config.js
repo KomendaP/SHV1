@@ -5,8 +5,8 @@
 var tasks   = require('./task-list');
 var gutil   = require('gulp-util');
 var builds  = "./BUILDS";
-var d     = builds + "/DEVELOPMENT";
-var p    = builds + "/production";
+var d       = builds + "/DEVELOPMENT";
+var p       = builds + "/production";
 
 var src     = './src',
     dest    = d,
