@@ -10,8 +10,7 @@ var gulp    = require('gulp'),
 
 gulp.task(conf.jade.t, function() {
     gulp.src(conf.jade.src)
-        .pipe(jade(_if(!conf.isProd, conf.jade.settings)))
+        .pipe(jade(_if(!conf.isProd, conf.jade.settings)).on('error', conf.gutil.log))
         .pipe(gulp.dest(conf.jade.dest))
-        .pipe(connect.reload())
-        .on('error', conf.gutil.log);
+        .pipe(connect.reload());
 });

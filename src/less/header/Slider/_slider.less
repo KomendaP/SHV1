@@ -1,0 +1,141 @@
+section.part-2.slider-wrapper {
+	@width: 1600px;
+	.slider {
+		position: relative;
+		.slide {
+			img {
+				max-width: 100%;
+				display: block;
+				margin: auto;
+			}
+			.slide-title {
+				width: 1155px;
+				h2 {
+					color: #000;
+					margin: 55px 0 45px 0;
+				}
+			}
+		}
+	}
+	.store-menu {
+		width: 100%;
+		position: absolute;
+		top: 31px;
+
+		.container {
+			width: 1260px;
+		}
+		nav.navbar {
+			width: 100%;
+			background: #000;
+			border-color: #000;
+			height: 83px;
+			color: #FFF;
+
+			ul.nav.navbar-nav {
+				margin: 0 0 0 316px;
+				float: none;
+
+				li{
+					a {
+						color: #fff;
+						padding: 30px 15px;
+						font-weight: bold;
+					}
+				}
+				form.navbar-form.navbar-right {
+					margin: 25px 13px;
+
+					.form-group {
+						input[type="text"] {
+							width: 310px;
+						}
+					}
+				}
+			}
+			.navbar-brand {
+				height: 83px;
+				line-height: 53px;
+				color: #FFF;
+
+				&.presenter{
+					width: 110px;
+					position: relative;
+					margin-left: 30px;
+
+					img {
+						position: absolute;
+						top: 0;
+						left: 0;
+					}
+					span {
+						position: absolute;
+						z-index: 1;
+						left: 51px;
+						top: 35px;
+						color: #fff;
+						font-size: 24px;
+					}
+				}
+			}
+			.navbar-form {
+				margin: 20px -15px;
+				position: relative;
+				float: right;
+
+				button {
+					position: absolute;
+					right: 15px;
+					top: 0;
+					background: transparent;
+					color: #dddddd;
+
+					&:hover {
+						color: #000;
+					}
+				}
+			}
+		}
+	}
+	.slider-bullets-wrapper {
+		position: absolute;
+		bottom: 116px;
+		width: 100%;
+
+		.container {
+			width: @width;
+		}
+
+		.slider-bullets {
+			border: 1px solid #cccccc;
+			display: table;
+			margin: auto;
+			background: #fff;
+			padding: 4px 10px 5px;
+
+			li {
+				display: inline-block;
+				margin: 0 9px;
+				& > a {
+					&::before {
+						@sise: 8px;
+						content: '';
+						width: @sise;
+						height: @sise;
+						display: block;
+						border-radius: 50%;
+						padding: 5px;
+						background: #cccccc;
+					}
+				}
+				&.active {
+					& > a {
+						&::before {
+							background: #000;
+						}
+					}
+				}
+			}
+		}
+	}
+}

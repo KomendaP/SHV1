@@ -22,11 +22,9 @@ gulp.task(conf.less.t, function () {
     gulp.src(conf.less.src)
         //.pipe(plumber())
         .pipe(_if(!conf.isProd, sourcemaps.init()))
-        .pipe(less({paths: [path.join(__dirname, 'less', 'includes')]}))
+        .pipe(less({paths: [path.join(__dirname, 'less', 'includes')]}).on('error', conf.gutil.log))
         .pipe(_if(conf.isProd, minifyCss(conf.less.minifyCss)))
-        .pipe(autopref(conf.less.prefix))
         .pipe(_if(!conf.isProd, sourcemaps.write()))
         .pipe(gulp.dest(conf.less.dest))
-        .pipe(connect.reload())
-        .on('error', conf.gutil.log);
+        .pipe(connect.reload());
 });

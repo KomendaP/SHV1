@@ -1,25 +1,3 @@
 section.header
 	include main menu/_main_menu
-	section.part-2.container-fluid
-		.row
-			.slider
-				img(src="files/images/bg1.jpg" title="girl" alt="girlpicture")
-		.container
-			.row.store-menu
-				nav.navbar.navbar-default
-					.navbar-header
-						a(href="#").navbar-brand.presenter
-							img(src="files/images/flag.png")
-							span S
-						a(href="#").navbar-brand Styletour
-					ul.nav.navbar-nav
-						li: a(href="#") Shop
-						li: a(href="#") Men
-						li: a(href="#") Women
-						li: a(href="#") kids
-						li: a(href="#") Accesories
-						li: a(href="#") Sale
-						form.navbar-form.navbar-right(role="search")
-							.form-group
-								input.form-control(type="text" placeholder="search")
-							button.glyphicon.glyphicon-search.btn(type="submit" aria-hidden="true")
+	include slider/_slider

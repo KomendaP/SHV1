@@ -1,0 +1,30 @@
+.col-xs-12.item-card
+	.row.image-wrapper
+		.col-xs-12.image
+			block image
+				img(src="./files/images/cards/1.jpg")
+		.col-xs-12.marks
+			span.sale
+				block Sale
+					| Sale
+			span.like.glyphicon.glyphicon-heart
+	.row.description
+		h4.col-xs-12.item-title
+			block item-title
+				| Cream jane jeans dress
+		.col-xs-12.item-descr
+				p
+					block item-descr
+						| Signature NYX cosmetics
+		.col-xs-12.item-price
+				h5
+					a(href="#")
+						block item-price
+							| Price:
+						span.price
+							block price
+								| $10.00
+		.col-xs-12.add-to-cart
+			button.btn.add-too-curt
+				block btn-title
+					| add to cart
