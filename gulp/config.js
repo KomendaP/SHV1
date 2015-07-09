@@ -16,7 +16,6 @@ var src     = './src',
 
 module.exports = {
     isProd: /prod+/i.test(dest),
-    isFirst: true,
     gutil: gutil,
     images: {
         t:tasks.img,

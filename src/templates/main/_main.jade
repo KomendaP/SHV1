@@ -1,4 +1,6 @@
-main.content.container
+.container.main-wrapper
 	.row
-		include sections/_asside.jade
-		include sections/_catalog
+		asside.col-xs-3.links
+			include sections/_asside.jade
+		section.col-xs-9
+			include sections/_catalog

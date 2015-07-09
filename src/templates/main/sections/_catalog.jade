@@ -1,16 +1,18 @@
-section.col-xs-8
-	section.row.group-title
+section.first-group
+	section.row.title-group
 		.col-xs-6
-			h2 Items on Demand
+			h2.title Items on Demand
 		.col-xs-6.pager
-			.row
-				.col-xs-6
-					a(href="#") View All Items
-				.col-xs-6
-					.button-group
-						button.btn.prev
-						button.btn.next
-	section.row.first-group
+			.viev-all
+				a(href="#") View All Items
+			.button-group
+				nav
+					ul.pagination
+						li: a(href="#", aria-label="Previous")
+							span(aria-hidden="true") &laquo;
+						li: a(href="#", aria-label="Next")
+							span(aria-hidden="true") &raquo;
+	section.row.item-cards
 		.col-xs-4
 			include cards/_1.jade
 		.col-xs-4

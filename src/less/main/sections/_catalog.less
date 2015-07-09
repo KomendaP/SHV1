@@ -1,15 +1,34 @@
-section {
-	section.row.group-title {
-		h2 {}
+section.first-group{
+	section.row.title-group {
+		margin: 48px 0 46px 30px;
+		h2.title {
+			margin: 0;
+			font-size: 26px;
+		}
 		.pager {
-			a {}
+			margin: 0;
+			.viev-all {
+				float: left;
+				line-height: 32px;
+				a {}
+			}
 			.button-group {
-				button.prev {}
-				button.next {}
+				float: right;
+				nav {
+					ul {
+						margin: 0;
+						li {
+							a {
+								border-radius: 0;
+								span {}
+							}
+						}
+					}
+				}
 			}
 		}
 	}
-	section.first-group {
+	section.item-cards {
 		@import "_card";
 	}//section.first-group
 }//section

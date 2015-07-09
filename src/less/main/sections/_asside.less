@@ -1,23 +1,58 @@
 asside.links {
-	ul {
-		li {
-			a {
-				color: #000;
-				&.show-more {
-					color: #337ab7;
-					&:hover, &:focus {
-						color: #23527c;
+	padding-top: 30px;
+	border-right: 1px solid #cccccc;
+	.links-box {
+		padding-left: 80px;
+		overflow: hidden;
+		ul {
+			list-style-type: none;
+			li {
+				margin-top: 10px;
+
+				&:first-child {
+					margin: 0;
+				}
+				a {
+					color: #000;
+					&.show-more {
+						color: #337ab7;
+						&:hover, &:focus {
+							color: #23527c;
+						}
 					}
 				}
 			}
 		}
 	}
 	.popular-categories {
-		h3 {}
-		ul {
-			li {
-				a {}
+		padding-bottom: 15px;
+		border-bottom: 1px solid #cccccc;
+		.links-box {
+			h3 {
+				//margin: 0;
+			}
+			ul {
+				padding: 20px 0 0 0;
+				li {
+					a {}
+				}
 			}
 		}
 	}
+	.popular-brends {
+		.links-box {
+			h3 {
+				margin: 27px 0 7px;
+			}
+			ul {
+				padding: 20px 0 0 0;
+				li {
+					a {}
+				}
+			}
+		}
+	}
+	.fashion-colors-card-slider {}
+	.shop-now {}
+	.about-store {}
 }
