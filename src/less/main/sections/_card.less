@@ -1,8 +1,8 @@
 .item-card {
-	@padding: 10px;
 	background: #fff;
-	padding-top: @padding;
-	padding-bottom: @padding;
+	padding: 10px 0 115px;
+	height: 440px;
+	position: relative;
 	transition: box-shadow 0.3s;
 	&:hover,
 	&:focus {
@@ -24,6 +24,9 @@
 		position: relative;
 		.image {
 			text-align: center;
+			width: 192px;
+			padding: 14px 15px 18px;
+			margin: auto;
 			img {
 				min-width: 100%;
 			}
@@ -83,13 +86,25 @@
 		h4.item-title {
 			text-align: center;
 			text-transform: uppercase;
+			font-size: 14px;
+			margin-bottom: 10px;
+			padding-left: 45px;
+			padding-right: 45px;
 		}
 		.item-descr {
 			p {
 				text-align: center;
+				font-size: 13px;
+				max-width: 175px;
+				margin: auto;
 			}
 		}
 		.item-price {
+			position: absolute;
+			bottom: 83px;
+			right: 50%;
+			margin-right: -50%;
+
 			h5{
 				text-align: center;
 				a{
@@ -100,10 +115,15 @@
 			}
 		}//.item-price
 		.add-to-cart {
+			position: absolute;
+			bottom: 27px;
+			right: 50%;
+			margin-right: -50%;
 			button.add-too-curt {
 				display: block;
 				margin: auto;
 				text-transform: uppercase;
+				padding: 10px 22px;
 			}
 		}
 	}//.description

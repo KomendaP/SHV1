@@ -3,9 +3,25 @@ main#main {
 	margin: auto;
 	background: #f4f4f4;
 	.main-wrapper {
-		width: 1335px;
+		@asidewidth: 22.2%;
+		width: 1205px;
 
+		aside.links {
+			width: @asidewidth;
+		}
+		section.content {
+			width: 100 - @asidewidth;
+			padding-left: 48px;
+		}
+		.col-xs-my {
+			position: relative;
+			min-height: 1px;
+			padding-left: 15px;
+			padding-right: 15px;
+			float: left;
+		}
 		@import "sections/_asside";
 		@import "sections/_catalog";
+
 	}
 }

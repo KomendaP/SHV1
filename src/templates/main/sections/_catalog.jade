@@ -1,21 +1,47 @@
 section.first-group
-	section.row.title-group
-		.col-xs-6
-			h2.title Items on Demand
-		.col-xs-6.pager
-			.viev-all
-				a(href="#") View All Items
-			.button-group
-				nav
-					ul.pagination
-						li: a(href="#", aria-label="Previous")
-							span(aria-hidden="true") &laquo;
-						li: a(href="#", aria-label="Next")
-							span(aria-hidden="true") &raquo;
+	block items-group
+		section.title-group
+			.row
+				.col-xs-9
+					h2.title
+						block item-group-title
+							| Items on Demand
+				.col-xs-3.pager
+					.viev-all
+						a(href="#") View All Items
+					.button-group
+						nav
+							ul.pagination
+								li: a(href="#", aria-label="Previous")
+									span(aria-hidden="true") &laquo;
+								li: a(href="#", aria-label="Next")
+									span(aria-hidden="true") &raquo;
+		section.row.item-cards
+			.col-xs-4
+				include cards/_1.jade
+			.col-xs-4
+				include cards/_2.jade
+			.col-xs-4
+				include cards/_3.jade
+section.first-group
+	section.title-group
+		.row
+			.col-xs-9
+				h2.title Items on Demand
+			.col-xs-3.pager
+				.viev-all
+					a(href="#") View All Items
+				.button-group
+					nav
+						ul.pagination
+							li: a(href="#", aria-label="Previous")
+								span(aria-hidden="true") &laquo;
+							li: a(href="#", aria-label="Next")
+								span(aria-hidden="true") &raquo;
 	section.row.item-cards
 		.col-xs-4
-			include cards/_1.jade
+			include cards/_4.jade
 		.col-xs-4
-			include cards/_2.jade
+			include cards/_5.jade
 		.col-xs-4
-			include cards/_3.jade
+			include cards/_6.jade
