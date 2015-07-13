@@ -1,47 +1,49 @@
 section.first-group
-	block items-group
-		section.title-group
-			.row
-				.col-xs-9
-					h2.title
-						block item-group-title
-							| Items on Demand
-				.col-xs-3.pager
-					.viev-all
-						a(href="#") View All Items
-					.button-group
-						nav
-							ul.pagination
-								li: a(href="#", aria-label="Previous")
-									span(aria-hidden="true") &laquo;
-								li: a(href="#", aria-label="Next")
-									span(aria-hidden="true") &raquo;
-		section.row.item-cards
-			.col-xs-4
-				include cards/_1.jade
-			.col-xs-4
-				include cards/_2.jade
-			.col-xs-4
-				include cards/_3.jade
-section.first-group
-	section.title-group
-		.row
-			.col-xs-9
-				h2.title Items on Demand
-			.col-xs-3.pager
-				.viev-all
-					a(href="#") View All Items
-				.button-group
-					nav
-						ul.pagination
-							li: a(href="#", aria-label="Previous")
-								span(aria-hidden="true") &laquo;
-							li: a(href="#", aria-label="Next")
-								span(aria-hidden="true") &raquo;
-	section.row.item-cards
-		.col-xs-4
-			include cards/_4.jade
-		.col-xs-4
-			include cards/_5.jade
-		.col-xs-4
-			include cards/_6.jade
+	+cards-group([
+		{
+			'title': 'Items on Demand',
+			'link': {},
+			'cards': {
+				'img': 1,
+	//			'sales': true,
+	//			'like': true,
+				'desc': {
+					'title': 'Cream jane jeans dress',
+					'text': 'Signature NYX cosmetics'
+				},
+				'link': {
+					'title': 'Price ',
+	//				'href': '',
+					'price': '10.00'
+				}
+			}
+		}
+	])
+section.second-group
+
+section.shop-now-group
+	.row
+		+shop-now([
+			{
+				'img': 1,
+				'title': 'sale upto 35%',
+				'desc':	'summer collection 2013'
+			},
+			{
+				'img': 2,
+				'title': 'New Arrivals',
+				'desc':	'lace bikinis and bras',
+				'link': {
+					'title': 'Shop now',
+					'href': '#',
+					'class': 'shop-now'
+				}
+			},
+			{
+				'title': 'free ',
+				'subtitle': 'shipping',
+				'desc':	'on order over $200'
+			}
+		])
+
+

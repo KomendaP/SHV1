@@ -1,0 +1,74 @@
+mixin shop-now(params)
+	each item in params
+		.col-xs-4
+			if item.img
+				section.shop-now
+					section.img-wrapper
+						img(src="./files/images/cards/shop now/shop-now-#{item.img}.jpg")
+					section.title-group
+						section.title-bg
+						.description
+							h4.title #{item.title}
+							p #{item.desc}
+							if item.link
+								+link(item.link)
+			else
+				section.shop-now.blank
+						section.title-group
+							.description
+								h4.title #{item.title}
+									span.sub-title #{item.subtitle}
+								p #{item.desc}
+
+mixin cards-group(groups)
+	section.title-group
+		.row
+			.col-xs-9
+				h2.title #{groups.title||'Title for group'}
+			.col-xs-3.pager
+				.viev-all
+					+link(groups.viewAll)
+					//a(href="#") View All Items
+				.button-group
+					nav
+						ul.pagination
+							li: a(href="#", aria-label="Previous")
+								span(aria-hidden="true") &laquo;
+							li: a(href="#", aria-label="Next")
+								span(aria-hidden="true") &raquo;
+	+card(groups.params)
+
+mixin card(params)
+	section.row.item-cards
+		each item in params
+			.col-xs-4
+				.col-xs-12.item-card
+					.row.image-wrapper
+						.image
+							img(src="./files/images/cards/#{item.img}.jpg")
+						if item.sales || item.like
+							.col-xs-12.marks
+								if item.sales
+									span.sale Sale
+								if item.like
+									span.like.glyphicon.glyphicon-heart
+					.row.description
+						h4.col-xs-12.item-title #{item.desc.title || 'Cream jane jeans dress'}
+						.col-xs-12.item-descr
+							p #{item.desc.text || 'Signature NYX cosmetics'}
+						.col-xs-12.item-price
+							h5
+								if item.link
+									//+link(item.link)
+						.col-xs-12.add-to-cart
+							button.btn.add-too-curt #{item.button || 'add to cart'}
+
+mixin link(item)
+	if item.class
+		a()&attributes({'href': (item.href || '#')}, {'class': item.class}) #{item.title || 'Title for link'}
+			if item.price
+				span.price $#{item.price}
+	else
+		a()&attributes({'href': (item.href||'#')}) #{item.title || 'Title for link'}
+			if item.price
+				span.price $#{item.price}

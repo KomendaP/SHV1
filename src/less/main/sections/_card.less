@@ -9,17 +9,6 @@
 		box-shadow: 0 0 25px #888;
 	}//.item-card:focus, .item-card:hover
 
-	&.like-it {
-		.marks span.like {
-			display: block;
-		}
-	}//.item-card.like-it
-	&.hot-sale {
-		.marks span.sale {
-			display: block;
-		}
-	}//.item-card.hot-sale
-
 	.image-wrapper {
 		position: relative;
 		.image {
@@ -34,11 +23,14 @@
 
 		.marks {
 			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+
 			span.sale {
-				display: none;
 				position: absolute;
-				top: 10px;
-				left: 20px;
+				top: 20px;
+				left: 40px;
 				z-index: 2;
 				cursor: pointer;
 				color: #000;
@@ -64,10 +56,9 @@
 				}
 			}//span.sale-mark
 			span.like {
-				display: none;
 				position: absolute;
 				top: 10px;
-				right: 10px;
+				right: 30px;
 				&::before {
 					cursor: pointer;
 					color: #f4f4f4;
