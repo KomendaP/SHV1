@@ -1,3 +1,47 @@
+//-------------------------- Content page  ----------------
+//-------------------------- card group ----------------
+mixin cardGroup(par)
+	section.title-group
+		.row
+			.col-xs-9
+				h2.title #{par.title || 'Group title'}
+			.col-xs-3.pager
+				.viev-all
+					+link(par.link)
+				.button-group
+					nav
+						ul.pagination
+							li: a(href="#", aria-label="Previous")
+								span(aria-hidden="true") &laquo;
+							li: a(href="#", aria-label="Next")
+								span(aria-hidden="true") &raquo;
+	+card(par.cards)
+//---------------------------- card --------------------
+mixin card(params)
+	section.row.item-cards
+		each item in params
+			.col-xs-4
+				.col-xs-12.item-card
+					.row.image-wrapper
+						.image
+							img(src="./files/images/cards/#{item.img || 1}.jpg")
+						if item.sales || item.like
+							.col-xs-12.marks
+								if item.sales
+									span.sale Sale
+								if item.like
+									span.like.glyphicon.glyphicon-heart
+					.row.description
+						h4.col-xs-12.item-title #{item.desc.title || 'Title for item'}
+						.col-xs-12.item-descr
+							p #{item.desc.text || 'Description for item'}
+						.col-xs-12.item-price
+							h5
+								if item.link
+									+link(item.link)
+						.col-xs-12.add-to-cart
+							button.btn.add-too-curt #{item.button || 'Add to cart'}
+//---------------------------- shop-now -------------------
 mixin shop-now(params)
 	each item in params
 		.col-xs-4
@@ -14,61 +58,36 @@ mixin shop-now(params)
 								+link(item.link)
 			else
 				section.shop-now.blank
-						section.title-group
-							.description
-								h4.title #{item.title}
-									span.sub-title #{item.subtitle}
-								p #{item.desc}
-
-mixin cards-group(groups)
-	section.title-group
-		.row
-			.col-xs-9
-				h2.title #{groups.title||'Title for group'}
-			.col-xs-3.pager
-				.viev-all
-					+link(groups.viewAll)
-					//a(href="#") View All Items
-				.button-group
-					nav
-						ul.pagination
-							li: a(href="#", aria-label="Previous")
-								span(aria-hidden="true") &laquo;
-							li: a(href="#", aria-label="Next")
-								span(aria-hidden="true") &raquo;
-	+card(groups.params)
-
-mixin card(params)
-	section.row.item-cards
-		each item in params
-			.col-xs-4
-				.col-xs-12.item-card
-					.row.image-wrapper
-						.image
-							img(src="./files/images/cards/#{item.img}.jpg")
-						if item.sales || item.like
-							.col-xs-12.marks
-								if item.sales
-									span.sale Sale
-								if item.like
-									span.like.glyphicon.glyphicon-heart
-					.row.description
-						h4.col-xs-12.item-title #{item.desc.title || 'Cream jane jeans dress'}
-						.col-xs-12.item-descr
-							p #{item.desc.text || 'Signature NYX cosmetics'}
-						.col-xs-12.item-price
-							h5
-								if item.link
-									//+link(item.link)
-						.col-xs-12.add-to-cart
-							button.btn.add-too-curt #{item.button || 'add to cart'}
-
+					section.title-group
+						.description
+							h4.title #{item.title}
+								span.sub-title #{item.subtitle}
+							p #{item.desc}
+//--------------------------- aside ----------------------
+//--------------------------- Populars -------------------
+mixin popular(params)
+	.row
+		.col-xs-12.links-box
+			h3 #{params.title || 'Title'}
+			if params.links
+				ul
+					each item in params.links
+						li
+							+link(item)
+//--------------------------- common ---------------------
+//--------------------------- link -----------------------
 mixin link(item)
-	if item.class
-		a()&attributes({'href': (item.href || '#')}, {'class': item.class}) #{item.title || 'Title for link'}
-			if item.price
-				span.price $#{item.price}
+	if item
+		if item.class
+			a()&attributes({'href': (item.href || '#')}, {'class': item.class}) #{item.title}
+				if item.price
+					span.price $#{item.price}
+		else
+			if typeof item == 'string'
+				a(href="#") #{item}
+			else
+				a()&attributes({'href': (item.href || '#')}) #{item.title}
+					if item.price
+						span.price $#{item.price}
 	else
-		a()&attributes({'href': (item.href||'#')}) #{item.title || 'Title for link'}
-			if item.price
-				span.price $#{item.price}
+		a(href="#") Link

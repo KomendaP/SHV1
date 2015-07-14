@@ -1,25 +1,105 @@
 section.first-group
-	+cards-group([
-		{
-			'title': 'Items on Demand',
-			'link': {},
-			'cards': {
+	+cardGroup({
+		title: 'Items on Demand',
+		link: 'View all items',
+		cards: [
+			{
 				'img': 1,
-	//			'sales': true,
-	//			'like': true,
+//				'sales': true,
+				'like': true,
 				'desc': {
 					'title': 'Cream jane jeans dress',
 					'text': 'Signature NYX cosmetics'
 				},
 				'link': {
 					'title': 'Price ',
-	//				'href': '',
+					'href': '#',
 					'price': '10.00'
 				}
+			},
+			{
+				'img': 2,
+				'sales': true,
+//				'like': true,
+				'desc': {
+					'title': 'Cream sissi tunic',
+					'text': 'Lightweight with just a hint of sheer color, this hydrating'
+				},
+				'link': {
+					'title': 'Price ',
+					'href': '#',
+					'price': '20.00'
+				}
+			},
+			{
+				'img': 3,
+//				'sales': true,
+//				'like': true,
+				'desc': {
+					'title': 'Big doodle shawl - blue/black',
+					'text': 'Lightweight with just a hint of sheer color, this hydrating'
+				},
+				'link': {
+					'title': 'Price ',
+					'href': '#',
+					'price': '09.00'
+				}
 			}
-		}
-	])
+		]
+	})
+
 section.second-group
+	+cardGroup({
+		title: 'Featured Items',
+		link: {
+			title: 'View all items',
+			href: '#'
+		},
+		cards: [
+			{
+				'img': 4,
+				'sales': true,
+//				'like': true,
+				'desc': {
+					'title': 'Cream jane jeans dress',
+					'text': 'Signature NYX cosmetics'
+				},
+				'link': {
+					'title': 'Price ',
+					'href': '#',
+					'price': '10.00'
+				}
+			},
+			{
+				'img': 5,
+//				'sales': true,
+//				'like': true,
+				'desc': {
+					'title': 'Cream sissi tunic',
+					'text': 'Lightweight with just a hint of sheer color, this hydrating'
+				},
+				'link': {
+					'title': 'Price ',
+					'href': '#',
+					'price': '20.00'
+				}
+			},
+			{
+				'img': 6,
+//				'sales': true,
+//				'like': true,
+				'desc': {
+					'title': 'Big doodle shawl - blue/black',
+					'text': 'Lightweight with just a hint of sheer color, this hydrating'
+				},
+				'link': {
+					'title': 'Price ',
+					'href': '#',
+					'price': '09.00'
+				}
+			}
+		]
+	})
 
 section.shop-now-group
 	.row
@@ -46,4 +126,53 @@ section.shop-now-group
 			}
 		])
 
+section.third-group
+	+cardGroup({
+		title: 'Latest Arrivals',
+		link: 'View all items',
+		cards: [
+			{
+				'img': 7,
+//				'sales': true,
+//				'like': true,
+				'desc': {
+					'title': 'Cream jane jeans dress',
+					'text': 'Signature NYX cosmetics'
+				},
+				'link': {
+					'title': 'Price ',
+					'href': '#',
+					'price': '10.00'
+				}
+			},
+			{
+				'img': 8,
+				'sales': true,
+//				'like': true,
+				'desc': {
+					'title': 'Cream sissi tunic',
+					'text': 'Lightweight with just a hint of sheer color, this hydrating'
+				},
+				'link': {
+					'title': 'Price ',
+					'href': '#',
+					'price': '20.00'
+				}
+			},
+			{
+				'img': 9,
+//				'sales': true,
+//				'like': true,
+				'desc': {
+					'title': 'Big doodle shawl - blue/black',
+					'text': 'Lightweight with just a hint of sheer color, this hydrating'
+				},
+				'link': {
+					'title': 'Price ',
+					'href': '#',
+					'price': '09.00'
+				}
+			}
+		]
+	})
 

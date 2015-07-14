@@ -1,32 +1,40 @@
 .popular-categories
-	.row
-		.col-xs-12.links-box
-			h3 Popular Categories
-			ul
-				li: a(href="#") Performance Collection
-				li: a(href="#") Pants
-				li: a(href="#") Woven Shirts
-				li: a(href="#") Earth-Friendly Apparel
-				li: a(href="#") Sweatshirts
-				li: a(href="#") Infants
-				li: a(href="#") Shorts
-				li: a(href="#") Adult Essentials
-				li: a(href="#").show-more Show More
+	+popular({
+		title: 'Popular Categories',
+		links: [
+			'Performance Collection',
+			'Pants',
+			'Woven Shirts',
+			'Earth-Friendly Apparel',
+			'Sweatshirts',
+			'Infants',
+			'Shorts',
+			'Adult Essentials',
+			{
+				title: 'Show More',
+				'class': 'show-more'
+			}
+		]
+	})
 
 .popular-brends
-	.row
-		.col-xs-12.links-box
-			h3 Popular Brands
-			ul
-				li: a(href="#") Ashworth
-				li: a(href="#") Rabbit Skins
-				li: a(href="#") Izod
-				li: a(href="#") LAT
-				li: a(href="#") Authentic Pigment
-				li: a(href="#") Canvas
-				li: a(href="#") Apples & Oranges
-				li: a(href="#") OccuNomix
-				li: a(href="#").show-more Show More
+	+popular({
+		title: 'Popular brands',
+		links: [
+			'Ashworth',
+			'Rabbit Skins',
+			'Izod',
+			'LAT',
+			'Authentic Pigment',
+			'Canvas',
+			'Apples & Oranges',
+			'OccuNomix',
+			{
+				title: 'Show More',
+				'class': 'show-more'
+			}
+		]
+	})
 
 .fashion-colors-card-slider
 	.row
