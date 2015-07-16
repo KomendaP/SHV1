@@ -65,29 +65,29 @@ mixin shop-now(params)
 							p #{item.desc}
 //--------------------------- aside ----------------------
 //--------------------------- Populars -------------------
-mixin popular(params)
-	.row
-		.col-xs-12.links-box
-			h3 #{params.title || 'Title'}
-			if params.links
-				ul
-					each item in params.links
-						li
-							+link(item)
+mixin linksList(params)
+	if params.title
+		h3 #{params.title}
+	ul()&attributes({'class': params.class})
+		if params.links
+			each item in params.links
+				li
+					+link(item)
+			if params.search
+				li.pull-right
+					form.navbar-form.navbar-right(role="search")
+						.form-group
+							input.form-control(type="text" placeholder="search")
+						button.glyphicon.glyphicon-search.btn(type="submit" aria-hidden="true")
+
 //--------------------------- common ---------------------
 //--------------------------- link -----------------------
-mixin link(item)
-	if item
-		if item.class
-			a()&attributes({'href': (item.href || '#')}, {'class': item.class}) #{item.title}
-				if item.price
-					span.price $#{item.price}
-		else
-			if typeof item == 'string'
-				a(href="#") #{item}
-			else
-				a()&attributes({'href': (item.href || '#')}) #{item.title}
-					if item.price
-						span.price $#{item.price}
+mixin link(params)
+	if typeof params === 'undefined'
+		a()&attributes({title: 'Link', href: '#'})
 	else
-		a(href="#") Link
+		if typeof params === 'string'
+			- title = params
+		a()&attributes({href: (params.href || '#'), class: params.class}) #{params.title || title}
+			if params.price
+				span.price $#{params.price}

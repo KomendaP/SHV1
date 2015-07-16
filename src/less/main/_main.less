@@ -1,10 +1,9 @@
 main#main {
-	width: 1600px;
-	margin: auto;
-	background: #f4f4f4;
+	background: #ececec;
 	.main-wrapper {
 		@asidewidth: 22.2%;
 		width: 1205px;
+		margin: auto;
 
 		aside.links {
 			width: @asidewidth;
@@ -22,9 +21,6 @@ main#main {
 		}
 		@import "sections/_asside";
 		@import "sections/_catalog";
-		.bottom-form {
-			.title {}
-			.description {}
-		}
 	}
+	@import "sections/_bottom-form";
 }

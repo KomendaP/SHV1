@@ -1,36 +1,37 @@
 section.part-2.container-fluid.slider-wrapper
-   .slider
-      .row.slide
-         .col-xs-12
-            .row
-               img(src="files/images/bg1.jpg" title="girl" alt="girlpicture")
-            .row
-               .container.slide-title
-                  h2 lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+	.slider
+		.row.slide
+			.col-xs-12
+				.row
+					img(src="files/images/bg1.jpg" title="girl" alt="girlpicture")
+				.row
+					.container
+						section.slide-interaction
+							.decr
+								h1 Women's Apparel
+								h2 T-Shirts, Dress Shirts, Tanks, Pants and More...
+							button.btn.btn-danger.shop-me Shop Women's Apparel
+				.row
+					.container.slide-title
+						h2 lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 
-      .store-menu
-         .container
-               nav.navbar.navbar-default
-                  .navbar-header
-                     a(href="#").navbar-brand.presenter
-                        img(src="files/images/flag.png")
-                        span S
-                     a(href="#").navbar-brand Styletour
-                  ul.nav.navbar-nav
-                     li: a(href="#") Shop
-                     li: a(href="#") Men
-                     li: a(href="#") Women
-                     li: a(href="#") kids
-                     li: a(href="#") Accesories
-                     li: a(href="#") Sale
-                     form.navbar-form.navbar-right(role="search")
-                        .form-group
-                           input.form-control(type="text" placeholder="search")
-                        button.glyphicon.glyphicon-search.btn(type="submit" aria-hidden="true")
-      .slider-bullets-wrapper
-         .container
-            div.slider-bullets
-               li.active: a(href="#")
-               li: a(href="#")
-               li: a(href="#")
-               li: a(href="#")
+		.store-menu
+			.container
+				nav.navbar.navbar-default
+					.navbar-header
+						a(href="#").navbar-brand.presenter
+							img(src="files/images/flag.png")
+							span S
+						a(href="#").navbar-brand Styletour
+					+linksList({
+						class: ['nav','navbar-nav'],
+						links: ['Shop', 'Men', 'Women', 'kids', 'Accesories', 'Sale'],
+						search: true
+					})
+		.slider-bullets-wrapper
+			.container
+				div.slider-bullets
+					li.active: a(href="#")
+					li: a(href="#")
+					li: a(href="#")
+					li: a(href="#")

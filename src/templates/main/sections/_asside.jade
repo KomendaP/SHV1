@@ -1,46 +1,49 @@
 .popular-categories
-	+popular({
-		title: 'Popular Categories',
-		links: [
-			'Performance Collection',
-			'Pants',
-			'Woven Shirts',
-			'Earth-Friendly Apparel',
-			'Sweatshirts',
-			'Infants',
-			'Shorts',
-			'Adult Essentials',
-			{
-				title: 'Show More',
-				'class': 'show-more'
-			}
-		]
-	})
-
+	.row
+		.col-xs-12.links-box
+			+linksList({
+				title: 'Popular Categories',
+				links: [
+					'Performance Collection',
+					'Pants',
+					'Woven Shirts',
+					'Earth-Friendly Apparel',
+					'Sweatshirts',
+					'Infants',
+					'Shorts',
+					'Adult Essentials',
+					{
+						title: 'Show More',
+						'class': 'show-more'
+					}
+				]
+			})
 .popular-brends
-	+popular({
-		title: 'Popular brands',
-		links: [
-			'Ashworth',
-			'Rabbit Skins',
-			'Izod',
-			'LAT',
-			'Authentic Pigment',
-			'Canvas',
-			'Apples & Oranges',
-			'OccuNomix',
-			{
-				title: 'Show More',
-				'class': 'show-more'
-			}
-		]
-	})
+	.row
+		.col-xs-12.links-box
+			+linksList({
+				title: 'Popular brands',
+				links: [
+					'Ashworth',
+					'Rabbit Skins',
+					'Izod',
+					'LAT',
+					'Authentic Pigment',
+					'Canvas',
+					'Apples & Oranges',
+					'OccuNomix',
+					{
+						title: 'Show More',
+						'class': 'show-more'
+					}
+				]
+			})
 
 .fashion-colors-card-slider
 	.row
 		.col-xs-12
 			section.small-slider
-				.slider-wrapper
+				.slides
 					.slide
 						.image
 							img(src="./files/images/cards/asside.jpg")
@@ -50,9 +53,22 @@
 							p.text Make every category of your
 								| webstore look special
 								| by setting different color schemes.
-.shop-now
+				.slider-bullets-wrapper
+					ul.slider-bullets
+						li.active: a(href="#")
+						li: a(href="#")
+						li: a(href="#")
+.trend
 	.row
 		.col-xs-12
+			.image
+				img(src="./files/images/cards/asside-shop-now.jpg")
+			.descr
+				h2
+					| Introducing
+					span  bombshell
+					|  forever
+			button.btn.btn-danger.by-trend Shop now
 .about-store
 	.row
 		.col-xs-12.links-box

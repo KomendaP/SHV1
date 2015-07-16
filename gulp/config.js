@@ -69,7 +69,8 @@ module.exports = {
                 nm + '/bootstrap/dist/fonts/*.svg',
                 nm + '/bootstrap/dist/fonts/*.ttf',
                 nm + '/bootstrap/dist/fonts/*.woff',
-                nm + '/bootstrap/dist/fonts/*.woff2'
+                nm + '/bootstrap/dist/fonts/*.woff2',
+	              src + '/files/fonts/*.*'
             ],
             dest: dest + '/fonts'
         },

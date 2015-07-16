@@ -12,6 +12,4 @@ gulp.task(conf.t, function(){
     // svg
     gulp.src(conf.svg.src.sm)
         .pipe(gulp.dest(conf.svg.dest));
-    gulp.src(conf.svg.src.sm)
-        .pipe(gulp.dest(conf.svg.dest));
 });
