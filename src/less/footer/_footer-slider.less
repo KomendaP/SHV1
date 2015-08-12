@@ -1,0 +1,48 @@
+section.tm-slider-section {
+	#tm-slider {
+		position: relative;
+		.tm-slider-wrapper {
+			ul.slides {
+				padding: 32px 57px;
+				margin: 0;
+				width: 100%;
+				display: table;
+				li.slide {
+					display: table-cell;
+					.image {
+						display: inline-block;
+						img {
+							max-width: 100%;
+							outline: none;
+							border: 0 none;
+						}
+					}
+				}
+			}
+			.button-group {
+				position: absolute;
+				width: 100%;
+				top: 50%;
+				margin-top: -10px;
+				nav {
+					ul.pagination {
+						width: 100%;
+						margin: 0;
+						li {
+							a {
+								padding: 1px 5px;
+								background: #ccc;
+								span {
+									color: #fff;
+								}
+							}
+							& + li {
+								float: right;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,18 @@
+section.tm-slider-section
+	.container
+		.row
+			#tm-slider
+				.tm-slider-wrapper
+					- var n = 1
+					ul.slides
+						while n < 7
+							li.slide
+								.image
+									img(src="./files/images/trade marks/#{n++}.png")
+					.button-group
+						nav
+							ul.pagination
+								li: a(href="#", aria-label="Previous")
+									span(aria-hidden="true").glyphicon.glyphicon-chevron-left
+								li: a(href="#", aria-label="Next")
+									span(aria-hidden="true").glyphicon.glyphicon-chevron-right

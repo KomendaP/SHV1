@@ -15,7 +15,7 @@
 // App styles
 @import "header/_header";
 @import "main/_main";
-
+@import "footer/_footer";
 //Common styles
 body {
 	background: #fff;
@@ -28,4 +28,23 @@ h1, h2, h3, h4, h5, h6, p, button {
 
 [id^="chromeperfectpixel"] {
   border: 1px solid #000;
+}
+nav {
+	ul.pagination {
+		width: 100%;
+		margin: 0;
+		padding: 2px 0 0;
+		li {
+			a {
+				padding: 1px 5px;
+				background: #ccc;
+				span {
+					color: #fff;
+				}
+			}
+			& + li {
+				float: right;
+			}
+		}
+	}
 }

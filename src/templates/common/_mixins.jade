@@ -12,9 +12,9 @@ mixin cardGroup(par)
 					nav
 						ul.pagination
 							li: a(href="#", aria-label="Previous")
-								span(aria-hidden="true") &laquo;
+								span(aria-hidden="true").glyphicon.glyphicon-chevron-left
 							li: a(href="#", aria-label="Next")
-								span(aria-hidden="true") &raquo;
+								span(aria-hidden="true").glyphicon.glyphicon-chevron-right
 	+card(par.cards)
 //---------------------------- card --------------------
 mixin card(params)

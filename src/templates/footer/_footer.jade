@@ -1,33 +1,4 @@
-section.tm-slider-section
-	.container
-		.row
-			#tm-slider
-				.tm-slider-wrapper
-					- var n = 1
-					ul
-						while n < 7
-							li.slide
-								.image
-									img(src="./files/images/trade marks/#{n++}.png")
-					.button-group
-						nav
-							ul.pagination
-								li: a(href="#", aria-label="Previous")
-									span(aria-hidden="true") &laquo;
-								li: a(href="#", aria-label="Next")
-									span(aria-hidden="true") &raquo;
-section.foter-links-section
-	.container
-		.row
-			.col-xs-2
-				.linksList
-					+linksList({})
-			.col-xs-2
-				.linksList
-					+linksList({})
-			.col-xs-2
-			.col-xs-2
-			.col-xs-2
-
-
+include _tm-slider
+include _footer-links
+include _copyright
 include _scripts
