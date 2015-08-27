@@ -10,6 +10,6 @@ gulp.task(conf.t, function(){
     gulp.src(conf.fonts.src)
         .pipe(gulp.dest(conf.fonts.dest));
     // svg
-    gulp.src(conf.svg.src.sm)
+    gulp.src(conf.svg.src.big)
         .pipe(gulp.dest(conf.svg.dest));
 });

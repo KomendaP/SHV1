@@ -1,6 +1,11 @@
 &.ul-tm-2 {
 	li.dropdown {
 		a.dropdown-toggle {
+          padding: 15px 6px 15px 15px;
+          &:focus,&:hover,&:visited,&:active, & {
+            background-color: transparent;
+            background-image: none;
+          }
 			span.caret {
 				margin-left: 15px;
 				color: #d1d1d1;
@@ -13,14 +18,21 @@
 			}
 			span.flag {
 				position: relative;
-				top: -2px;
+                top: 0px;
+                left: -6px;
+                width: 14px;
+                height: 10px;
 			}
 		}
 		ul.dropdown-menu {
+            a[data-toggle="dropdown"] {
+              display: none;
+            }
 			li {
 				a {
 					position: relative;
 					overflow: hidden;
+                  margin: 5px 0;
 					span.flag {
 						margin: 0 20px 0 0;
 					}

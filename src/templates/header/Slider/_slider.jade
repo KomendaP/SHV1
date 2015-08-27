@@ -4,19 +4,17 @@ section.part-2.container-fluid.slider-wrapper
 			.col-xs-12
 				.row
 					img(src="files/images/bg1.jpg" title="girl" alt="girlpicture")
-				.row
-					.container
-						section.slide-interaction
-							.decr
-								h1 Women's Apparel
-								h2 T-Shirts, Dress Shirts, Tanks, Pants and More...
-							button.btn.btn-danger.shop-me Shop Women's Apparel
-				.row
-					.container.slide-title
-						h2 lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+				.container-fluid
+					section.slide-interaction
+						.decr
+							h1 Women's Apparel
+							h2 T-Shirts, Dress Shirts, Tanks, Pants and More...
+						button.btn.btn-danger.shop-me Shop Women's Apparel
+				.container-fluid.slide-title
+					h2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 
 		.store-menu
-			.container
+			.container-fluid
 				nav.navbar.navbar-default
 					.navbar-header
 						a(href="#").navbar-brand.presenter
@@ -25,11 +23,11 @@ section.part-2.container-fluid.slider-wrapper
 						a(href="#").navbar-brand Styletour
 					+linksList({
 						class: ['nav','navbar-nav'],
-						links: ['Shop', 'Men', 'Women', 'kids', 'Accesories', 'Sale'],
+						links: ['Shop', 'Men', 'Women', 'Kids', 'Accesories', 'Sale'],
 						search: true
 					})
 		.slider-bullets-wrapper
-			.container
+			.container-fluid
 				div.slider-bullets
 					li.active: a(href="#")
 					li: a(href="#")

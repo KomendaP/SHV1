@@ -70,16 +70,16 @@ module.exports = {
                 nm + '/bootstrap/dist/fonts/*.ttf',
                 nm + '/bootstrap/dist/fonts/*.woff',
                 nm + '/bootstrap/dist/fonts/*.woff2',
-	              src + '/files/fonts/*.*'
+	            src + '/files/fonts/*.*'
             ],
-            dest: dest + '/fonts'
+            dest: dest + '/files/fonts'
         },
         svg: {
             src: {
                 sm: bw + '/flag-icon-css/flags/1x1/*.svg',
                 big: bw + '/flag-icon-css/flags/4x3/*.svg'
             },
-            dest: dest + '/svg'
+            dest: dest + '/files/svg'
         }
     },
     jade: {

@@ -2,33 +2,28 @@
 @import "common/_variables";
 @import "common/_mixins";
 @import "common/_fonts";
+@import "common/_bootstrap";
 
-// btstrp
-@import "../../node_modules/bootstrap/less/bootstrap";
-//@import "";
-@import "../../node_modules/bootstrap/less/theme";
-//
-//// flags
-//@import "@{flags}less/flag-icon";
+@import '@{flags-less}flag-icon-base';
+@import '@{flags-less}flag-icon-list';
 
 
 // App styles
 @import "header/_header";
 @import "main/_main";
 @import "footer/_footer";
+
 //Common styles
 body {
 	background: #fff;
 	color: #fff;
+  	font-family: 'Open Sans';
 }
 h1, h2, h3, h4, h5, h6, p, button {
 	color: #000;
-	font-family: 'Myriad Pro Regular';
+	font-family: 'Open Sans';
 }
 
-[id^="chromeperfectpixel"] {
-  border: 1px solid #000;
-}
 nav {
 	ul.pagination {
 		width: 100%;
@@ -47,4 +42,11 @@ nav {
 			}
 		}
 	}
+}
+
+img[id^="chromeperfectpixel"] {
+  border: 1px solid #000;
+  margin-left: -800px !important;
+  left: 50% !important;
+  top: 0 !important;
 }

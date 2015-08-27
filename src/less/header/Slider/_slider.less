@@ -8,8 +8,10 @@ section.part-2.slider-wrapper {
 				display: block;
 				margin: auto;
 			}
+			.container-fluid {
+			  max-width:1190px;
+			}
 			.slide-interaction {
-				width: 600px;
 				position: absolute;
 				top: 266px;
 				text-align: center;
@@ -18,10 +20,10 @@ section.part-2.slider-wrapper {
 					margin-bottom: 40px;
 					h1, h2 {
 						color: #fff;
-						//font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;;
 					}
 					h1 {
 						font-size: 48px;
+					  	letter-spacing: 1.5px;
 					}
 					h2 {
 						font-size: 30px;
@@ -29,7 +31,7 @@ section.part-2.slider-wrapper {
 				}
 				button.shop-me {
 					font-size: 24px;
-					padding: 12px 36px;
+					padding: 12px 30px;
 				}
 			}
 			.slide-title {
@@ -46,8 +48,8 @@ section.part-2.slider-wrapper {
 		position: absolute;
 		top: 31px;
 
-		.container {
-			width: 1260px;
+		.container-fluid {
+			max-width: 1260px;
 		}
 		nav.navbar {
 			width: 100%;
@@ -62,9 +64,9 @@ section.part-2.slider-wrapper {
 
 				li{
 					a {
-						color: #fff;
-						padding: 30px 15px;
-						font-weight: bold;
+					    color: #fff;
+                        padding: 32px 18px 28px;
+                        letter-spacing: 1px;
 					}
 				}
 				form.navbar-form.navbar-right {
@@ -83,6 +85,11 @@ section.part-2.slider-wrapper {
 				height: 83px;
 				line-height: 53px;
 				color: #FFF;
+                padding: 15px 24px;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 19px;
+                letter-spacing: 1.3px;
 
 				&.presenter{
 					width: 110px;
@@ -100,7 +107,7 @@ section.part-2.slider-wrapper {
 						left: 51px;
 						top: 35px;
 						color: #fff;
-						font-size: 24px;
+						font-size: 26px;
 					}
 				}
 			}
@@ -128,8 +135,8 @@ section.part-2.slider-wrapper {
 		bottom: 116px;
 		width: 100%;
 
-		.container {
-			width: @width;
+		.container-fluid {
+			max-width: @width;
 		}
 
 		.slider-bullets {
