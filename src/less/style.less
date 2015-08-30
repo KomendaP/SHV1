@@ -50,3 +50,37 @@ img[id^="chromeperfectpixel"] {
   left: 50% !important;
   top: 0 !important;
 }
+
+@media screen and (max-width: @screen-lg) {
+	body {
+		&::before {
+			content: 'lg';
+			font-size: 20px;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			color: red;
+		}
+	}
+}
+@media screen and (max-width: @screen-md) {
+	body {
+		&::before {
+			content: 'md';
+		}
+	}
+}
+@media screen and (max-width: @screen-sm) {
+	body {
+		&::before {
+			content: 'sm';
+		}
+	}
+}
+@media screen and (max-width: @screen-xs) {
+	body {
+		&::before {
+			content: 'xs';
+		}
+	}
+}

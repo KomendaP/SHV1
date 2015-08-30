@@ -1,0 +1,228 @@
+section.store-menu {
+	width: 100%;
+	position: absolute;
+	top: 31px;
+	.container-fluid {
+		max-width: 1260px;
+		nav.navbar {
+			width: 100%;
+			background: #000;
+			border-color: #000;
+			height: 83px;
+			color: #FFF;
+		  display: table;
+			.c-1 {
+				display: table-cell;
+				.navbar-header {
+					display: table;
+					width: 100%;
+					a.navbar-brand {
+						height: 83px;
+						line-height: 53px;
+						color: #FFF;
+						padding: 15px 24px;
+						text-transform: uppercase;
+						font-weight: bold;
+						font-size: 19px;
+						letter-spacing: 1.3px;
+						img {
+							position: absolute;
+							top: 0;
+							left: 0;
+						}
+						span {
+							position: absolute;
+							z-index: 1;
+							left: 51px;
+							top: 35px;
+							color: #fff;
+							font-size: 26px;
+						}
+						&.presenter {
+							width: 110px;
+							position: relative;
+							margin-left: 30px;
+						}
+						&.company-name {}
+					}
+				}
+			}
+			.c-2 {
+				display: table-cell;
+				.tr {
+					display: table;
+					width: 100%;
+					ul.nav.navbar-nav {
+						float: none;
+						display: table-row;
+						li {
+							display: table-cell;
+							float: none;
+							vertical-align: middle;
+							a {
+								color: #fff;
+								padding: 0 18px;
+								letter-spacing: 1px;
+								display: inline-block;
+								line-height: 55px;
+							}
+							form.navbar-form {
+								padding: 19px 15px;
+								margin: 0;
+								width: 100%;
+								.form-group {
+									display: table;
+									width: 100%;
+									input[type="text"] {
+										width: 100%;
+										padding: 6px 48px 6px 18px;
+										height: 44px;
+										display: table-cell;
+									}
+								}
+								button[type="submit"] {
+									position: absolute;
+									right: 20px;
+									top: 25px;
+									background: transparent;
+									color: #dddddd;
+									&:hover {
+										color: #000;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: @screen-lg) {
+	section.store-menu {
+		top: 15px;
+		.container-fluid {
+			nav.navbar {
+				height: auto;
+				.c-1 {
+					vertical-align: top;
+					max-width: 235px;
+					.navbar-header {
+						a.navbar-brand {
+							line-height: 55px;
+							padding: 0 0 0 100px;
+							height: auto;
+							display: table-cell;
+							width: auto;
+							img {
+								width: 55px;
+							}
+							span {
+								font-size: 18px;
+								left: 23px;
+								top: 2px;
+							}
+							&.presenter {}
+							&.company-name {}
+						}
+					}
+				}
+				.c-2 {
+					.tr {
+						ul.nav.navbar-nav {
+							li {
+								a {
+									line-height: 55px;
+								}
+								form.navbar-form {
+									padding: 5px 5px;
+									.form-group {
+										input[type="text"] {}
+									}
+									button[type="submit"] {
+										right: 8px;
+										top: 11px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: @screen-md) {
+	section.store-menu {
+		.container-fluid {
+			nav.navbar {
+				.c-1 {
+					width: 90px;
+					.navbar-header {
+						a.navbar-brand {
+							img {}
+							span {}
+							&.presenter {
+								width: auto;
+								padding: 0;
+							}
+							&.company-name {
+								display: none;
+							}
+						}
+					}
+				}
+				.c-2 {
+					.tr {
+						ul.nav.navbar-nav {
+							li {
+								a {}
+								form.navbar-form {
+									.form-group {
+										input[type="text"] {}
+									}
+									button[type="submit"] {}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: @screen-sm) {
+	section.store-menu {
+		display: none;
+		.container-fluid {
+			nav.navbar {
+				.c-1 {
+					.navbar-header {
+						a.navbar-brand {
+							img {}
+							span {}
+							&.presenter {}
+							&.company-name {}
+						}
+					}
+				}
+				.c-2 {
+					.tr {
+						ul.nav.navbar-nav {
+							li {
+								a {}
+								form.navbar-form {
+									.form-group {
+										input[type="text"] {}
+									}
+									button[type="submit"] {}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: @screen-xs) {}

@@ -1,0 +1,20 @@
+section.store-menu.row
+	.container-fluid
+		nav.navbar.navbar-default
+			.c-1
+				.navbar-header
+					a(href="#").navbar-brand.presenter
+						img(src="files/images/flag.png")
+						span S
+					a(href="#").navbar-brand.company-name Styletour
+			.c-2
+				.tr
+					ul.nav.navbar-nav
+						each item in ['Shop', 'Men', 'Women', 'Kids', 'Accesories', 'Sale']
+							li
+								+link(item)
+						li
+							form.navbar-form.navbar-right(role="search")
+								.form-group
+									input.form-control(type="text" placeholder="search")
+								button.glyphicon.glyphicon-search.btn(type="submit" aria-hidden="true")

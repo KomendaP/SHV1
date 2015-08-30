@@ -1,43 +1,21 @@
-section.part-2.container-fluid.slider-wrapper
-	.slider
-		.row.slide
-			.col-xs-12
-				.row
-					img(src="files/images/bg1.jpg" title="girl" alt="girlpicture")
-				.container-fluid
-					section.slide-interaction
-						.decr
-							h1 Women's Apparel
-							h2 T-Shirts, Dress Shirts, Tanks, Pants and More...
-						button.btn.btn-danger.shop-me Shop Women's Apparel
-		.store-menu
+section.slider
+	.row.slide
+		.col-xs-12
+			.row
+				img(src="files/images/bg1.jpg" title="girl" alt="girlpicture")
 			.container-fluid
-				nav.navbar.navbar-default
-					.c-1
-						.navbar-header
-							a(href="#").navbar-brand.presenter
-								img(src="files/images/flag.png")
-								span S
-							a(href="#").navbar-brand.company-name Styletour
-					.c-2
-						.tr
-							ul.nav.navbar-nav
-								each item in ['Shop', 'Men', 'Women', 'Kids', 'Accesories', 'Sale']
-									li
-										+link(item)
-								li
-									form.navbar-form.navbar-right(role="search")
-										.form-group
-											input.form-control(type="text" placeholder="search")
-										button.glyphicon.glyphicon-search.btn(type="submit" aria-hidden="true")
-
-		.slider-bullets-wrapper
-			.container-fluid
-				div.slider-bullets
-					li.active: a(href="#")
-					li: a(href="#")
-					li: a(href="#")
-					li: a(href="#")
-		.container-fluid.slide-title
-			h2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+				section.slide-interaction
+					.decr
+						h1 Women's Apparel
+						h2 T-Shirts, Dress Shirts, Tanks, Pants and More...
+					button.btn.btn-danger.shop-me Shop Women's Apparel
+	.slider-bullets-wrapper
+		.container-fluid
+			div.slider-bullets
+				li.active: a(href="#")
+				li: a(href="#")
+				li: a(href="#")
+				li: a(href="#")
+	.container-fluid.slide-title
+		h2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 
