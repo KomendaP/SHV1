@@ -1,9 +1,39 @@
 &.submenu {
   padding: 0 0 0 5px;
   li {
-    a {}
-  }
-  @media (min-width: 1000px) {
-    //padding-right: 30px;
+    a {
+      span.adds {}
+    }
   }
 }
+@media screen and (max-width: @screen-lg) {
+  &.submenu {
+    li {
+      a {
+        span.adds {}
+      }
+    }
+  }
+}
+@media screen and (max-width: @screen-md) {
+  &.submenu {
+    li {
+      a {
+        padding: 15px 10px;
+        span.adds {
+          display: none;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: @screen-sm) {
+  &.submenu {
+    li {
+      a {
+        span.adds {}
+      }
+    }
+  }
+}
+@media screen and (max-width: @screen-xs) {}

@@ -54,9 +54,18 @@ img[id^="chromeperfectpixel"] {
 @media screen and (max-width: @screen-lg) {
 	body {
 		&::before {
+			@height: 40px;
 			content: 'lg';
 			font-size: 20px;
-			position: absolute;
+			font-weight: bold;
+			position: fixed;
+			z-index: 999999;
+			border-radius: 50%;
+			text-align: center;
+			line-height: @height;
+			width: @height;
+			height: @height;
+			background: #0f0;
 			top: 10px;
 			left: 10px;
 			color: red;

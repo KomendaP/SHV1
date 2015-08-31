@@ -1,178 +1,235 @@
 section.first-group
-	+cardGroup({
-		title: 'Items on Demand',
-		link: 'View all items',
-		cards: [
-			{
-				'img': 1,
-//				'sales': true,
-				'like': true,
-				'desc': {
-					'title': 'Cream jane jeans dress',
-					'text': 'Signature NYX cosmetics'
-				},
-				'link': {
-					'title': 'Price ',
-					'href': '#',
-					'price': '10.00'
-				}
-			},
-			{
-				'img': 2,
-				'sales': true,
-//				'like': true,
-				'desc': {
-					'title': 'Cream sissi tunic',
-					'text': 'Lightweight with just a hint of sheer color, this hydrating'
-				},
-				'link': {
-					'title': 'Price ',
-					'href': '#',
-					'price': '20.00'
-				}
-			},
-			{
-				'img': 3,
-//				'sales': true,
-//				'like': true,
-				'desc': {
-					'title': 'Big doodle shawl - blue/black',
-					'text': 'Lightweight with just a hint of sheer color, this hydrating'
-				},
-				'link': {
-					'title': 'Price ',
-					'href': '#',
-					'price': '09.00'
-				}
-			}
-		]
-	})
-
+	section.title-group
+		.row
+			.col-xs-9
+				h2.title Items on Demand
+			.col-xs-3.pager
+				.viev-all
+					+link('View all items')
+				.button-group
+					nav
+						ul.pagination
+							li: a(href="#", aria-label="Previous")
+								span(aria-hidden="true").glyphicon.glyphicon-chevron-left
+							li: a(href="#", aria-label="Next")
+								span(aria-hidden="true").glyphicon.glyphicon-chevron-right
+	section.row.item-cards
+		.col-xs-4
+			.col-xs-12.item-card
+				.row.image-wrapper
+					.image
+						img(src="./files/images/cards/1.jpg")
+					.col-xs-12.marks
+						//span.sale Sale
+						span.like.glyphicon.glyphicon-heart
+				.row.description
+					h4.col-xs-12.item-title Cream jane jeans dress
+					.col-xs-12.item-descr
+						p Signature NYX cosmetics
+					.col-xs-12.item-price
+						h5
+							+link({'title': 'Price ', 'href': '#', 'price': '10.00'})
+					.col-xs-12.add-to-cart
+						button.btn.add-too-curt Add to cart
+		.col-xs-4
+			.col-xs-12.item-card
+				.row.image-wrapper
+					.image
+						img(src="./files/images/cards/2.jpg")
+					//.col-xs-12.marks
+					//	span.sale Sale
+					//	span.like.glyphicon.glyphicon-heart
+				.row.description
+					h4.col-xs-12.item-title Cream sissi tunic
+					.col-xs-12.item-descr
+						p Lightweight with just a hint of sheer color, this hydrating
+					.col-xs-12.item-price
+						h5
+							+link({'title': 'Price ', 'href': '#', 'price': '20.00'})
+					.col-xs-12.add-to-cart
+						button.btn.add-too-curt Add to cart
+		.col-xs-4
+			.col-xs-12.item-card
+				.row.image-wrapper
+					.image
+						img(src="./files/images/cards/3.jpg")
+					//.col-xs-12.marks
+					//	span.sale Sale
+					//	span.like.glyphicon.glyphicon-heart
+				.row.description
+					h4.col-xs-12.item-title Big doodle shawl - blue/black
+					.col-xs-12.item-descr
+						p Lightweight with just a hint of sheer color, this hydrating
+					.col-xs-12.item-price
+						h5
+							+link({'title': 'Price ', 'href': '#', 'price': '09.00'})
+					.col-xs-12.add-to-cart
+						button.btn.add-too-curt Add to cart
 section.second-group
-	+cardGroup({
-		title: 'Featured Items',
-		link: {
-			title: 'View all items',
-			href: '#'
-		},
-		cards: [
-			{
-				'img': 4,
-				'sales': true,
-//				'like': true,
-				'desc': {
-					'title': 'Cream jane jeans dress',
-					'text': 'Signature NYX cosmetics'
-				},
-				'link': {
-					'title': 'Price ',
-					'href': '#',
-					'price': '10.00'
-				}
-			},
-			{
-				'img': 5,
-//				'sales': true,
-//				'like': true,
-				'desc': {
-					'title': 'Cream sissi tunic',
-					'text': 'Lightweight with just a hint of sheer color, this hydrating'
-				},
-				'link': {
-					'title': 'Price ',
-					'href': '#',
-					'price': '20.00'
-				}
-			},
-			{
-				'img': 6,
-//				'sales': true,
-//				'like': true,
-				'desc': {
-					'title': 'Big doodle shawl - blue/black',
-					'text': 'Lightweight with just a hint of sheer color, this hydrating'
-				},
-				'link': {
-					'title': 'Price ',
-					'href': '#',
-					'price': '09.00'
-				}
-			}
-		]
-	})
+	section.title-group
+		.row
+			.col-xs-9
+				h2.title Featured Items
+			.col-xs-3.pager
+				.viev-all
+					+link('View all items')
+				.button-group
+					nav
+						ul.pagination
+							li: a(href="#", aria-label="Previous")
+								span(aria-hidden="true").glyphicon.glyphicon-chevron-left
+							li: a(href="#", aria-label="Next")
+								span(aria-hidden="true").glyphicon.glyphicon-chevron-right
+	section.row.item-cards
+		.col-xs-4
+			.col-xs-12.item-card
+				.row.image-wrapper
+					.image
+						img(src="./files/images/cards/4.jpg")
+					//.col-xs-12.marks
+						//span.sale Sale
+						//span.like.glyphicon.glyphicon-heart
+				.row.description
+					h4.col-xs-12.item-title Cream jane jeans dress
+					.col-xs-12.item-descr
+						p Signature NYX cosmetics
+					.col-xs-12.item-price
+						h5
+							+link({'title': 'Price ', 'href': '#', 'price': '20.00'})
+					.col-xs-12.add-to-cart
+						button.btn.add-too-curt Add to cart
+		.col-xs-4
+			.col-xs-12.item-card
+				.row.image-wrapper
+					.image
+						img(src="./files/images/cards/5.jpg")
+					//.col-xs-12.marks
+						//span.sale Sale
+						//span.like.glyphicon.glyphicon-heart
+				.row.description
+					h4.col-xs-12.item-title Cream sissi tunic
+					.col-xs-12.item-descr
+						p Lightweight with just a hint of sheer color, this hydrating
+					.col-xs-12.item-price
+						h5
+							+link({'title': 'Price ', 'href': '#', 'price': '20.00'})
+					.col-xs-12.add-to-cart
+						button.btn.add-too-curt Add to cart
+		.col-xs-4
+			.col-xs-12.item-card
+				.row.image-wrapper
+					.image
+						img(src="./files/images/cards/6.jpg")
+					//.col-xs-12.marks
+						//span.sale Sale
+						//span.like.glyphicon.glyphicon-heart
+				.row.description
+					h4.col-xs-12.item-title Big doodle shawl - blue/black
+					.col-xs-12.item-descr
+						p Lightweight with just a hint of sheer color, this hydrating
+					.col-xs-12.item-price
+						h5
+							+link({'title': 'Price ', 'href': '#', 'price': '09.00'})
+					.col-xs-12.add-to-cart
+						button.btn.add-too-curt Add to cart
 
-section.shop-now-group
-	.row
-		+shop-now([
-			{
-				'img': 1,
-				'title': 'sale upto 35%',
-				'desc':	'summer collection 2013'
-			},
-			{
-				'img': 2,
-				'title': 'New Arrivals',
-				'desc':	'lace bikinis and bras',
-				'link': {
-					'title': 'Shop now',
-					'href': '#',
-					'class': 'shop-now'
-				}
-			},
-			{
-				'title': 'free ',
-				'subtitle': 'shipping',
-				'desc':	'on order over $200'
-			}
-		])
-
+	section.shop-now-group
+		.row
+			.col-xs-4
+				section.shop-now
+					section.img-wrapper
+						img(src="./files/images/cards/shop now/shop-now-1.jpg")
+					section.title-group
+						section.title-bg
+						.description
+							h4.title sale upto 35%
+							p summer collection 2013
+			.col-xs-4
+				section.shop-now
+					section.img-wrapper
+						img(src="./files/images/cards/shop now/shop-now-2.jpg")
+					section.title-group
+						section.title-bg
+						.description
+							h4.title New Arrivals
+							p lace bikinis and bras
+							+link({
+								'title': 'Shop now',
+								'href': '#',
+								'class': 'shop-now'
+							})
+			.col-xs-4
+				section.shop-now.blank
+					section.title-group
+						.description
+							h4.title free
+								span.sub-title  shipping
+							p on order over $200
 section.third-group
-	+cardGroup({
-		title: 'Latest Arrivals',
-		link: 'View all items',
-		cards: [
-			{
-				'img': 7,
-//				'sales': true,
-//				'like': true,
-				'desc': {
-					'title': 'Cream jane jeans dress',
-					'text': 'Signature NYX cosmetics'
-				},
-				'link': {
-					'title': 'Price ',
-					'href': '#',
-					'price': '10.00'
-				}
-			},
-			{
-				'img': 8,
-				'sales': true,
-//				'like': true,
-				'desc': {
-					'title': 'Cream sissi tunic',
-					'text': 'Lightweight with just a hint of sheer color, this hydrating'
-				},
-				'link': {
-					'title': 'Price ',
-					'href': '#',
-					'price': '20.00'
-				}
-			},
-			{
-				'img': 9,
-//				'sales': true,
-//				'like': true,
-				'desc': {
-					'title': 'Big doodle shawl - blue/black',
-					'text': 'Lightweight with just a hint of sheer color, this hydrating'
-				},
-				'link': {
-					'title': 'Price ',
-					'href': '#',
-					'price': '09.00'
-				}
-			}
-		]
-	})
+	section.title-group
+		.row
+			.col-xs-9
+				h2.title Latest Arrivals
+			.col-xs-3.pager
+				.viev-all
+					+link('View all items')
+				.button-group
+					nav
+						ul.pagination
+							li: a(href="#", aria-label="Previous")
+								span(aria-hidden="true").glyphicon.glyphicon-chevron-left
+							li: a(href="#", aria-label="Next")
+								span(aria-hidden="true").glyphicon.glyphicon-chevron-right
+	section.row.item-cards
+		.col-xs-4
+			.col-xs-12.item-card
+				.row.image-wrapper
+					.image
+						img(src="./files/images/cards/7.jpg")
+					//.col-xs-12.marks
+						//span.sale Sale
+						//span.like.glyphicon.glyphicon-heart
+				.row.description
+					h4.col-xs-12.item-title Cream jane jeans dress
+					.col-xs-12.item-descr
+						p Signature NYX cosmetics
+					.col-xs-12.item-price
+						h5
+							+link({'title': 'Price ', 'href': '#', 'price': '10.00'})
+					.col-xs-12.add-to-cart
+						button.btn.add-too-curt Add to cart
+		.col-xs-4
+			.col-xs-12.item-card
+				.row.image-wrapper
+					.image
+						img(src="./files/images/cards/8.jpg")
+					.col-xs-12.marks
+						span.sale Sale
+						//span.like.glyphicon.glyphicon-heart
+				.row.description
+					h4.col-xs-12.item-title Cream sissi tunic
+					.col-xs-12.item-descr
+						p Lightweight with just a hint of sheer color, this hydrating
+					.col-xs-12.item-price
+						h5
+							+link({'title': 'Price ', 'href': '#', 'price': '20.00'})
+					.col-xs-12.add-to-cart
+						button.btn.add-too-curt Add to cart
+		.col-xs-4
+			.col-xs-12.item-card
+				.row.image-wrapper
+					.image
+						img(src="./files/images/cards/9.jpg")
+					//.col-xs-12.marks
+						//span.sale Sale
+						//span.like.glyphicon.glyphicon-heart
+				.row.description
+					h4.col-xs-12.item-title Big doodle shawl - blue/black
+					.col-xs-12.item-descr
+						p Lightweight with just a hint of sheer color, this hydrating
+					.col-xs-12.item-price
+						h5
+							+link({'title': 'Price ', 'href': '#', 'price': '09.00'})
+					.col-xs-12.add-to-cart
+						button.btn.add-too-curt Add to cart
 

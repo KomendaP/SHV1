@@ -2,7 +2,7 @@ main#main {
 	background: #ececec;
 	.main-wrapper {
 		@asidewidth: 22.2%;
-		width: 1205px;
+		max-width: 1205px;
 		margin: auto;
 
 		aside.links {
@@ -24,3 +24,7 @@ main#main {
 	}
 	@import "sections/_bottom-form";
 }
+@media screen and (max-width: @screen-lg) {}
+@media screen and (max-width: @screen-md) {}
+@media screen and (max-width: @screen-sm) {}
+@media screen and (max-width: @screen-xs) {}
