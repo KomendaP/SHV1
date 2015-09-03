@@ -1,7 +1,21 @@
 section.slider {
 	@width: 1600px;
 	position: relative;
+	ul.slider-wrapper {
+		display: table;
+		text-align: center;
+		vertical-align: middle;
+		padding: 0;
+		margin: 0;
+		width: 100%;
+	}
 	.slide {
+		float: left;
+		display: none;
+		width: 100%;
+		&.active {
+			display: table-cell;
+		}
 		img {
 			max-width: 100%;
 			display: block;

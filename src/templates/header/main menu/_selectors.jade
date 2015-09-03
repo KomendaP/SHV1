@@ -1,6 +1,6 @@
 ul.nav.navbar-nav.ul-tm-2
     li.dropdown.dd-1
-        a.dropdown-toggle(
+        a#flag.dropdown-toggle(
         href="#"
         data-toggle="dropdown"
         role="button"
@@ -12,26 +12,28 @@ ul.nav.navbar-nav.ul-tm-2
         ul.dropdown-menu(role="menu")
             li: a(href="#")
                 span.flag.flag-icon-background.flag-icon-gb(title="gb")
-                | Eng
+                span.word English
             li: a(href="#")
                 span.flag.flag-icon-background.flag-icon-ua(title="ua")
-                | Ukr
+                span.word Ukrainian
             li: a(href="#")
                 span.flag.flag-icon-background.flag-icon-ru(title="ru")
-                | Rus
+                span.word Russian
     li.dropdown.dd-2
-        a.dropdown-toggle(
+        a#cur.dropdown-toggle(
         href="#"
         data-toggle="dropdown"
         role="button"
         aria-expanded="false"
         )
-            span.word Currecy:
-            span usd
+            span.word Currecy: &nbsp;
+            span.cur.usd usd
             span.caret
         ul.dropdown-menu(role="menu")
             li
-                a(href="#") USD
+                a(href="#")
+                    span.cur.usd USD
             li
-                a(href="#") GRN
+                a(href="#")
+                    span.cur.grn GRN
 
