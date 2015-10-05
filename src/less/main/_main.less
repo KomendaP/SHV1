@@ -1,8 +1,13 @@
+@import "sections/asside/_asside";
+@import "sections/content/_content";
+@import "sections/content/_card";
+@import "sections/content/_shop-now";
+
 main#main {
 	background: #ececec;
 	.main-wrapper {
 		@asidewidth: 22.2%;
-		width: 1205px;
+		max-width: 1205px;
 		margin: auto;
 
 		aside.links {
@@ -19,8 +24,47 @@ main#main {
 			padding-right: 15px;
 			float: left;
 		}
-		@import "sections/_asside";
-		@import "sections/_catalog";
 	}
-	@import "sections/_bottom-form";
+}
+
+@media screen and (max-width: @screen-lg) {
+	main#main {
+		.main-wrapper {
+			aside.links {
+				display: none;
+			}
+			section.content {
+				padding: 0 15px;
+				width: 100%;
+			}
+			.col-xs-my {}
+		}
+	}
+}
+@media screen and (max-width: @screen-md) {
+	main#main {
+		.main-wrapper {
+			aside.links {}
+			section.content {}
+			.col-xs-my {}
+		}
+	}
+}
+@media screen and (max-width: @screen-sm) {
+	main#main {
+		.main-wrapper {
+			aside.links {}
+			section.content {}
+			.col-xs-my {}
+		}
+	}
+}
+@media screen and (max-width: @screen-xs) {
+	main#main {
+		.main-wrapper {
+			aside.links {}
+			section.content {}
+			.col-xs-my {}
+		}
+	}
 }

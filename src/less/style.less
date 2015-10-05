@@ -1,13 +1,5 @@
 // Main
-@import "common/_variables";
-@import "common/_mixins";
-@import "common/_fonts";
-@import "common/_bootstrap";
-
-@import '@{flags-less}flag-icon-base';
-@import '@{flags-less}flag-icon-list';
-
-
+@import "common/_common";
 // App styles
 @import "header/_header";
 @import "main/_main";
@@ -50,30 +42,43 @@ img[id^="chromeperfectpixel"] {
   left: 50% !important;
   top: 0 !important;
 }
-
-@media screen and (max-width: @screen-lg) {
-	body {
-		&::before {
-			content: 'lg';
-			font-size: 20px;
-			position: absolute;
-			top: 10px;
-			left: 10px;
-			color: red;
-		}
+body {
+	&::before {
+		@height: 40px;
+		content: 'lg';
+		font-size: 20px;
+		font-weight: bold;
+		position: fixed;
+		z-index: 999999;
+		border-radius: 50%;
+		text-align: center;
+		line-height: @height;
+		width: @height;
+		height: @height;
+		background: #0f0;
+		top: 10px;
+		left: 10px;
+		color: red;
 	}
 }
-@media screen and (max-width: @screen-md) {
+@media screen and (max-width: @screen-lg) {
 	body {
 		&::before {
 			content: 'md';
 		}
 	}
 }
-@media screen and (max-width: @screen-sm) {
+@media screen and (max-width: @screen-md) {
 	body {
 		&::before {
 			content: 'sm';
+		}
+	}
+}
+@media screen and (max-width: @screen-sm) {
+	body {
+		&::before {
+			content: 'xs';
 		}
 	}
 }

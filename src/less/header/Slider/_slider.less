@@ -1,7 +1,21 @@
 section.slider {
 	@width: 1600px;
 	position: relative;
+	ul.slider-wrapper {
+		display: table;
+		text-align: center;
+		vertical-align: middle;
+		padding: 0;
+		margin: 0;
+		width: 100%;
+	}
 	.slide {
+		float: left;
+		display: none;
+		width: 100%;
+		&.active {
+			display: table-cell;
+		}
 		img {
 			max-width: 100%;
 			display: block;
@@ -114,6 +128,22 @@ section.slider {
 				font-size: 18px;
 			}
 		}
+		.slider-bullets-wrapper {
+			bottom: 105px;
+			.container-fluid {}
+			.slider-bullets {
+				li {
+					& > a {
+						&::before {}
+					}
+					&.active {
+						& > a {
+							&::before {}
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -123,7 +153,6 @@ section.slider {
 			img {}
 			.container-fluid {}
 			.slide-interaction {
-				top: 15%;
 				.decr {
 					h1, h2 {}
 					h1 {}
@@ -135,17 +164,17 @@ section.slider {
 		.slide-title {
 			h2 {}
 		}
-	}
-	.slider-bullets-wrapper {
-		.container-fluid {}
-		.slider-bullets {
-			li {
-				& > a {
-					&::before {}
-				}
-				&.active {
+		.slider-bullets-wrapper {
+			.container-fluid {}
+			.slider-bullets {
+				li {
 					& > a {
 						&::before {}
+					}
+					&.active {
+						& > a {
+							&::before {}
+						}
 					}
 				}
 			}
@@ -159,7 +188,11 @@ section.slider {
 			.container-fluid {}
 			.slide-interaction {
 				top: 15%;
+				left: 50%;
+				margin-left: -50%;
+				width: 100%;
 				.decr {
+					margin-bottom: 20px;
 					h1, h2 {}
 					h1 {}
 					h2 {}
@@ -170,21 +203,60 @@ section.slider {
 		.slide-title {
 			h2 {}
 		}
-	}
-	.slider-bullets-wrapper {
-		.container-fluid {}
-		.slider-bullets {
-			li {
-				& > a {
-					&::before {}
-				}
-				&.active {
+		.slider-bullets-wrapper {
+			.container-fluid {}
+			.slider-bullets {
+				li {
 					& > a {
 						&::before {}
+					}
+					&.active {
+						& > a {
+							&::before {}
+						}
 					}
 				}
 			}
 		}
 	}
 }
-@media screen and (max-width: @screen-xs) {}
+@media screen and (max-width: @screen-xs) {
+	section.slider {
+		.slide {
+			img {}
+			.container-fluid {}
+			.slide-interaction {
+				left: 50%;
+				margin-left: -50%;
+				.decr {
+					h1, h2 {}
+					h1 {
+						font-size: 24px;
+					}
+					h2 {
+						font-size: 14px;
+					}
+				}
+				button.shop-me {}
+			}
+		}
+		.slide-title {
+			h2 {}
+		}
+		.slider-bullets-wrapper {
+			.container-fluid {}
+			.slider-bullets {
+				li {
+					& > a {
+						&::before {}
+					}
+					&.active {
+						& > a {
+							&::before {}
+						}
+					}
+				}
+			}
+		}
+	}
+}

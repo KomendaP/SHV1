@@ -1,8 +1,5 @@
 &.ul-tm-3 {
 	float: right;
-	@media (max-width: @screen-sm){
-		float: none;
-	}
 	li {
 		a {
 			&.cart {
@@ -30,3 +27,52 @@
 		}
 	}
 }
+@media screen and (max-width: @screen-lg) {
+	&.ul-tm-3 {
+		li {
+			a {
+				&.cart {
+					&:hover {}
+					span {
+						&:before {}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: @screen-md) {
+	&.ul-tm-3 {
+		li {
+			a {
+				&.cart {
+					&:hover {}
+					span {
+						&:before {}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: @screen-sm) {
+	&.ul-tm-3 {
+		float: none;
+		li {
+			a {
+				&.cart {
+					margin: 18px 15px;
+					padding: 10px 15px;
+					display: block;
+					height: auto;
+					width:auto;
+					&:hover {}
+					span {
+						&:before {}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: @screen-xs) {}

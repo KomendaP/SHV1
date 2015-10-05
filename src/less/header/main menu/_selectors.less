@@ -41,3 +41,79 @@
 		}
 	}
 }
+@media screen and (max-width: @screen-lg) {
+	&.ul-tm-2 {
+		li.dropdown {
+			a.dropdown-toggle {
+				&:focus,&:hover,&:visited,&:active, & {}
+				span.caret {}
+				span.select-value {}
+				span.flag {}
+				span.word {}
+			}
+			ul.dropdown-menu {
+				a[data-toggle="dropdown"] {}
+				li {
+					a {
+						span.flag {}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: @screen-md) {
+	&.ul-tm-2 {
+		li.dropdown {
+			a.dropdown-toggle {
+				padding: 15px;
+				&:focus,&:hover,&:visited,&:active, & {}
+				span.caret {
+					display: none;
+				}
+				span.select-value {}
+				span.flag {
+					left: 0px;
+					width: 21px;
+					height: 16px;
+				}
+				span.word {
+					display: none;
+				}
+			}
+			ul.dropdown-menu {
+				a[data-toggle="dropdown"] {}
+				li {
+					a {
+						span.flag {}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: @screen-sm) {
+	&.ul-tm-2 {
+		li.dropdown {
+			a.dropdown-toggle {
+				&:focus,&:hover,&:visited,&:active, & {}
+				span.caret {}
+				span.select-value {}
+				span.flag {}
+				span.word {
+					display: inline;
+					margin: 0 5px;
+				}
+			}
+			ul.dropdown-menu {
+				a[data-toggle="dropdown"] {}
+				li {
+					a {
+						span.flag {}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: @screen-xs) {}
